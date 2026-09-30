@@ -1,0 +1,1141 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Introduction étape par étape au framework mobile [Flutter]">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/flutter-etape-par-etape-sept-2026/mise-en-place-de-lenvironnement-de-travail.html">
+      
+      
+        <link rel="prev" href="introduction.html">
+      
+      
+        <link rel="next" href="premiers-pas-avec-flutter.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>2. Mise en place de l’environnement de travail - Introduction étape par étape au framework mobile [Flutter]</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Introduction étape par étape au framework mobile [Flutter]";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-mise-en-place-de-lenvironnement-de-travail" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Introduction étape par étape au framework mobile [Flutter]" class="md-header__button md-logo" aria-label="Introduction étape par étape au framework mobile [Flutter]" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Introduction étape par étape au framework mobile [Flutter]
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. Mise en place de l’environnement de travail
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Passer en mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer en mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Passer en mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer en mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/flutter-etape-par-etape-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Introduction étape par étape au framework mobile [Flutter]" class="md-nav__button md-logo" aria-label="Introduction étape par étape au framework mobile [Flutter]" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Introduction étape par étape au framework mobile [Flutter]
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/flutter-etape-par-etape-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Mise en place de l’environnement de travail
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="mise-en-place-de-lenvironnement-de-travail.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Mise en place de l’environnement de travail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-installer-les-outils" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Installer les outils
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-installation-du-client-flutter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Installation du client Flutter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-android-studio-et-les-outils-de-ligne-de-commande-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Android Studio et les outils de ligne de commande Android
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-preparer-un-emulateur-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Préparer un émulateur Android
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-preparer-le-telephone-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. Préparer le téléphone Android
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="premiers-pas-avec-flutter.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Premiers pas avec Flutter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="les-widgets.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Les widgets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="le-routage.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Le routage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lasynchrone-et-letat-partage.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. L'asynchrone et l'état partagé
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="internationalisation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Internationalisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="le-serveur-rdvmedecins-une-boite-noire.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Le serveur RdvMedecins, une boîte noire
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="dialoguer-avec-le-serveur.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Dialoguer avec le serveur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusion-intermediaire.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Conclusion intermédiaire
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="etude-de-cas--le-client-flutter-de-lapplication-rdvmedecins.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Étude de cas : le client Flutter de l'application RdvMedecins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="deploiement.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Déploiement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="annexes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Annexes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><span id="chapitre-1-mise-en-place-de-lenvironnement-de-travail" name="chapitre-1-mise-en-place-de-lenvironnement-de-travail" class="odt-bookmark-anchor"></span></p>
+<h1 id="2-mise-en-place-de-lenvironnement-de-travail">2. <span style="color: #2e74b5">Mise en place de l’environnement de travail</span></h1>
+<p><span id="installer-les-outils" name="installer-les-outils" class="odt-bookmark-anchor"></span></p>
+<h2 id="21-installer-les-outils">2.1. <span style="color: #2e74b5">Installer les outils</span></h2>
+<ol>
+<li><strong>Node.js</strong> : télécharger et installer la version 22 (ou plus récente) depuis <a href="https://nodejs.org/">nodejs.org</a>. Vérifier l’installation dans un terminal :</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>node --version
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>npm --version
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>
+<p><strong>Visual Studio Code</strong> (VSCode) : téléchargeable gratuitement sur <a href="https://code.visualstudio.com/">code.visualstudio.com</a>. Installer l’extension « TypeScript and JavaScript Language Features » (généralement déjà intégrée).</p>
+</li>
+<li>
+<p><strong>[MySQL] 8</strong> : installer par exemple via <a href="https://www.apachefriends.org/">XAMPP</a>, <a href="https://laragon.org/">Laragon</a> (sous Windows) ou directement <a href="https://dev.mysql.com/downloads/mysql/"><em><mark style="background-color: #fff5ce">[MySQL]</mark></em> Community Server</a>. Un outil d’administration graphique (phpMyAdmin, <em><mark style="background-color: #fff5ce">[MySQL]</mark></em> Workbench, DBeaver, HeidiSQL…) facilite la suite. Par la suite, l’outil Laragon est utilisé.</p>
+</li>
+</ol>
+<h2 id="22-installation-du-client-flutter">2.2. <span style="color: #2e74b5">Installation du client Flutter</span></h2>
+<p>Lancez VSCode sans désigner de projet :</p>
+<p><img src="images/1000000000000299000000BE1659BF59.png" width="333" height="95" style="width:8.798cm;height:2.514cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000299000000BE1659BF59.png" /></p>
+<ul>
+<li>en [1-2], demandez à voir la palette de commandes ;</li>
+</ul>
+<p><img src="images/10000000000001C200000091697A7090.png" width="225" height="73" style="width:5.953cm;height:1.919cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C200000091697A7090.png" /></p>
+<ul>
+<li>en [3], créez un nouveau projet Flutter ;</li>
+</ul>
+<p><img src="images/100000000000055F00000115D79D336F.png" width="602" height="122" style="width:15.921cm;height:3.221cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000055F00000115D79D336F.png" /></p>
+<ul>
+<li>en [4], créez une application ;</li>
+</ul>
+<p><img src="images/1000000000000567000001A3ADEBE84C.png" width="602" height="182" style="width:15.921cm;height:4.822cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000567000001A3ADEBE84C.png" /></p>
+<ul>
+<li>en [5-6], désignez un dossier dans lequel sera créé le sous-dossier du projet ;</li>
+</ul>
+<p><img src="images/100000000000033B000000E9893CB218.png" width="414" height="117" style="width:10.941cm;height:3.083cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000033B000000E9893CB218.png" /></p>
+<ul>
+<li>en [6], donnez un nom au projet. Ce sera également le nom du dossier créé pour le projet ;</li>
+</ul>
+<p><img src="images/10000000000004BE000001EA71832475.png" width="602" height="243" style="width:15.921cm;height:6.426cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004BE000001EA71832475.png" /></p>
+<ul>
+<li>en [1-3], désignez les cibles du projet [1 – application Android, 2- application de bureau 3 – application web] ;</li>
+</ul>
+<p><img src="images/10000000000001A600000359CB73D876.png" width="190" height="384" style="width:5.02cm;height:10.16cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001A600000359CB73D876.png" /></p>
+<ul>
+<li>en [4], le projet créé. VSCode télécharge automatiquement le SDK de Flutter ;</li>
+</ul>
+<p>La commande <strong><em>[flutter doctor]</em></strong> vérifie que tout ce dont <em>[Flutter]</em> a besoin est en place, cible par cible. À lancer dans un terminal VSCode du projet Flutter nouvellement créé :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>flutter doctor
+</code></pre></div>
+<p>Lorsque tout est correct, on obtient un résultat de ce genre (les numéros de version varient) :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>PS C:\Data\st-2026\dev\flutter-nestjs-sept-2026\flutter_application_1&gt; flutter doctor
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>Doctor summary (to see all details, run flutter doctor -v):
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>[√] Flutter (Channel stable, 3.44.9, on Microsoft Windows [version 10.0.26200.9457], locale fr-FR)
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>[√] Windows Version (Windows 11 or higher, 25H2, 2009)
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>[√] Android toolchain - develop for Android devices (Android SDK version 37.0.0)
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>[√] Chrome - develop for the web
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>[√] Visual Studio - develop Windows apps (Visual Studio Build Tools 2026 18.9.0)
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>[√] Connected device (3 available)
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>[√] Network resources
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>• No issues found!
+</code></pre></div></td></tr></table></div>
+<p>Chaque ligne commence par un symbole : <em>[√]</em> (tout va bien), <em>[!]</em> (avertissement : un élément manque, ce qui n&#x27;empêche pas forcément de travailler) ou <em>[X]</em> (erreur). Pour ce cours, les lignes qui comptent sont <em>[Flutter]</em>, <em>[Android toolchain]</em> (compilation pour un téléphone <em>[Android]</em>) et <em>[Connected device]</em> (au moins un appareil détecté, en particulier le téléphone). Les lignes <em>[Chrome]</em> (cible web) et <em>[Visual Studio]</em> (cible Windows) ne concernent que ces cibles : un <em>[!]</em> ou un <em>[X]</em> sur une cible que vous n&#x27;utilisez pas peut être ignoré.</p>
+<p>Si <em>[Android toolchain]</em> signale « cmdline-tools component is missing », installer les <em>[Android SDK Command-line Tools]</em> (voir ci-après) ; si elle signale « Android license status unknown », accepter les licences (étape 5). La commande <strong><em>[flutter doctor -v]</em></strong> détaille chaque vérification.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span>
+<span class="normal"><a href="#__codelineno-3-21">21</a></span>
+<span class="normal"><a href="#__codelineno-3-22">22</a></span>
+<span class="normal"><a href="#__codelineno-3-23">23</a></span>
+<span class="normal"><a href="#__codelineno-3-24">24</a></span>
+<span class="normal"><a href="#__codelineno-3-25">25</a></span>
+<span class="normal"><a href="#__codelineno-3-26">26</a></span>
+<span class="normal"><a href="#__codelineno-3-27">27</a></span>
+<span class="normal"><a href="#__codelineno-3-28">28</a></span>
+<span class="normal"><a href="#__codelineno-3-29">29</a></span>
+<span class="normal"><a href="#__codelineno-3-30">30</a></span>
+<span class="normal"><a href="#__codelineno-3-31">31</a></span>
+<span class="normal"><a href="#__codelineno-3-32">32</a></span>
+<span class="normal"><a href="#__codelineno-3-33">33</a></span>
+<span class="normal"><a href="#__codelineno-3-34">34</a></span>
+<span class="normal"><a href="#__codelineno-3-35">35</a></span>
+<span class="normal"><a href="#__codelineno-3-36">36</a></span>
+<span class="normal"><a href="#__codelineno-3-37">37</a></span>
+<span class="normal"><a href="#__codelineno-3-38">38</a></span>
+<span class="normal"><a href="#__codelineno-3-39">39</a></span>
+<span class="normal"><a href="#__codelineno-3-40">40</a></span>
+<span class="normal"><a href="#__codelineno-3-41">41</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">PS</span><span class="w"> </span><span class="n">C</span><span class="p">:</span><span class="err">\</span><span class="n">Data</span><span class="err">\</span><span class="n">st</span><span class="o">-</span><span class="mi">2026</span><span class="err">\</span><span class="n">dev</span><span class="err">\</span><span class="n">flutter</span><span class="o">-</span><span class="n">nestjs</span><span class="o">-</span><span class="n">sept</span><span class="o">-</span><span class="mi">2026</span><span class="err">\</span><span class="n">flutter_application_1</span><span class="o">&gt;</span><span class="w"> </span><span class="n">flutter</span><span class="w"> </span><span class="n">doctor</span><span class="w"> </span><span class="o">-</span><span class="n">v</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="o">[</span><span class="err">√</span><span class="o">]</span><span class="w"> </span><span class="n">Flutter</span><span class="w"> </span><span class="p">(</span><span class="n">Channel</span><span class="w"> </span><span class="n">stable</span><span class="p">,</span><span class="w"> </span><span class="mf">3.44.9</span><span class="p">,</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">Microsoft</span><span class="w"> </span><span class="n">Windows</span><span class="w"> </span><span class="o">[</span><span class="n">version</span><span class="w"> </span><span class="mf">10.0.26200.9457</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">locale</span><span class="w"> </span><span class="n">fr</span><span class="o">-</span><span class="n">FR</span><span class="p">)</span><span class="w"> </span><span class="o">[</span><span class="mi">305</span><span class="n">ms</span><span class="o">]</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">    </span><span class="err">•</span><span class="w"> </span><span class="n">Flutter</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="mf">3.44.9</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">channel</span><span class="w"> </span><span class="n">stable</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">C</span><span class="p">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">serge</span><span class="err">\</span><span class="n">flutter</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="err">•</span><span class="w"> </span><span class="n">Upstream</span><span class="w"> </span><span class="n">repository</span><span class="w"> </span><span class="n">https</span><span class="p">:</span><span class="c1">//github.com/flutter/flutter.git</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">    </span><span class="err">•</span><span class="w"> </span><span class="n">Framework</span><span class="w"> </span><span class="n">revision</span><span class="w"> </span><span class="mi">6</span><span class="n">b182d2c75</span><span class="w"> </span><span class="p">(</span><span class="mi">7</span><span class="w"> </span><span class="n">weeks</span><span class="w"> </span><span class="n">ago</span><span class="p">),</span><span class="w"> </span><span class="mi">2026</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">05</span><span class="w"> </span><span class="mi">10</span><span class="p">:</span><span class="mo">04</span><span class="p">:</span><span class="mo">07</span><span class="w"> </span><span class="o">-</span><span class="mo">0700</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">    </span><span class="err">•</span><span class="w"> </span><span class="n">Engine</span><span class="w"> </span><span class="n">revision</span><span class="w"> </span><span class="mi">5</span><span class="n">a2a6a42cc</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">    </span><span class="err">•</span><span class="w"> </span><span class="n">Dart</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="mf">3.12.2</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">    </span><span class="err">•</span><span class="w"> </span><span class="n">DevTools</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="mf">2.57.0</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">    </span><span class="err">•</span><span class="w"> </span><span class="n">Feature</span><span class="w"> </span><span class="n">flags</span><span class="p">:</span><span class="w"> </span><span class="n">enable</span><span class="o">-</span><span class="n">web</span><span class="p">,</span><span class="w"> </span><span class="n">enable</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">desktop</span><span class="p">,</span><span class="w"> </span><span class="n">enable</span><span class="o">-</span><span class="n">macos</span><span class="o">-</span><span class="n">desktop</span><span class="p">,</span><span class="w"> </span><span class="n">enable</span><span class="o">-</span><span class="n">windows</span><span class="o">-</span><span class="n">desktop</span><span class="p">,</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">      </span><span class="n">enable</span><span class="o">-</span><span class="n">android</span><span class="p">,</span><span class="w"> </span><span class="n">enable</span><span class="o">-</span><span class="n">ios</span><span class="p">,</span><span class="w"> </span><span class="n">cli</span><span class="o">-</span><span class="n">animations</span><span class="p">,</span><span class="w"> </span><span class="n">enable</span><span class="o">-</span><span class="kd">native</span><span class="o">-</span><span class="n">assets</span><span class="p">,</span><span class="w"> </span><span class="n">enable</span><span class="o">-</span><span class="n">swift</span><span class="o">-</span><span class="n">package</span><span class="o">-</span><span class="n">manager</span><span class="p">,</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">      </span><span class="n">omit</span><span class="o">-</span><span class="n">legacy</span><span class="o">-</span><span class="n">version</span><span class="o">-</span><span class="n">file</span><span class="p">,</span><span class="w"> </span><span class="n">enable</span><span class="o">-</span><span class="n">lldb</span><span class="o">-</span><span class="n">debugging</span><span class="p">,</span><span class="w"> </span><span class="n">enable</span><span class="o">-</span><span class="n">uiscene</span><span class="o">-</span><span class="n">migration</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="o">[</span><span class="err">√</span><span class="o">]</span><span class="w"> </span><span class="n">Windows</span><span class="w"> </span><span class="nf">Version</span><span class="w"> </span><span class="p">(</span><span class="n">Windows</span><span class="w"> </span><span class="mi">11</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">higher</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="n">H2</span><span class="p">,</span><span class="w"> </span><span class="mi">2009</span><span class="p">)</span><span class="w"> </span><span class="o">[</span><span class="mi">895</span><span class="n">ms</span><span class="o">]</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="o">[</span><span class="err">√</span><span class="o">]</span><span class="w"> </span><span class="n">Android</span><span class="w"> </span><span class="n">toolchain</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">develop</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Android</span><span class="w"> </span><span class="nf">devices</span><span class="w"> </span><span class="p">(</span><span class="n">Android</span><span class="w"> </span><span class="n">SDK</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="mf">37.0.0</span><span class="p">)</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">793</span><span class="n">ms</span><span class="o">]</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="w">    </span><span class="err">•</span><span class="w"> </span><span class="n">Android</span><span class="w"> </span><span class="n">SDK</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">C</span><span class="p">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">serge</span><span class="err">\</span><span class="n">AppData</span><span class="err">\</span><span class="n">Local</span><span class="err">\</span><span class="n">Android</span><span class="err">\</span><span class="n">sdk</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="w">    </span><span class="err">•</span><span class="w"> </span><span class="n">Emulator</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="mf">37.1.11.0</span><span class="w"> </span><span class="p">(</span><span class="n">build_id</span><span class="w"> </span><span class="mi">15917651</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">CL</span><span class="p">:</span><span class="n">N</span><span class="o">/</span><span class="n">A</span><span class="p">)</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="w">    </span><span class="err">•</span><span class="w"> </span><span class="n">Platform</span><span class="w"> </span><span class="n">android</span><span class="o">-</span><span class="mf">37.0</span><span class="p">,</span><span class="w"> </span><span class="n">build</span><span class="o">-</span><span class="n">tools</span><span class="w"> </span><span class="mf">37.0.0</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="w">    </span><span class="err">•</span><span class="w"> </span><span class="n">Java</span><span class="w"> </span><span class="n">binary</span><span class="w"> </span><span class="n">at</span><span class="p">:</span><span class="w"> </span><span class="n">C</span><span class="p">:</span><span class="err">\</span><span class="n">Program</span><span class="w"> </span><span class="n">Files</span><span class="err">\</span><span class="n">Android</span><span class="err">\</span><span class="n">Android</span><span class="w"> </span><span class="n">Studio</span><span class="err">\</span><span class="n">jbr</span><span class="err">\</span><span class="n">bin</span><span class="err">\</span><span class="n">java</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="w">      </span><span class="n">This</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">JDK</span><span class="w"> </span><span class="n">bundled</span><span class="w"> </span><span class="kd">with</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">latest</span><span class="w"> </span><span class="n">Android</span><span class="w"> </span><span class="n">Studio</span><span class="w"> </span><span class="n">installation</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="n">machine</span><span class="p">.</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="w">      </span><span class="n">To</span><span class="w"> </span><span class="n">manually</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">JDK</span><span class="w"> </span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="n">use</span><span class="p">:</span><span class="w"> </span><span class="err">`</span><span class="n">flutter</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="o">--</span><span class="n">jdk</span><span class="o">-</span><span class="n">dir</span><span class="o">=</span><span class="s">"path/to/jdk"</span><span class="err">`</span><span class="p">.</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="w">    </span><span class="err">•</span><span class="w"> </span><span class="n">Java</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="n">OpenJDK</span><span class="w"> </span><span class="n">Runtime</span><span class="w"> </span><span class="nf">Environment</span><span class="w"> </span><span class="p">(</span><span class="n">build</span><span class="w"> </span><span class="mf">25.0.3</span><span class="o">+-</span><span class="mi">15898627</span><span class="o">-</span><span class="n">b508</span><span class="mf">.16</span><span class="p">)</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="w">    </span><span class="err">•</span><span class="w"> </span><span class="n">All</span><span class="w"> </span><span class="n">Android</span><span class="w"> </span><span class="n">licenses</span><span class="w"> </span><span class="n">accepted</span><span class="p">.</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24"></a>
+<a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="o">[</span><span class="err">√</span><span class="o">]</span><span class="w"> </span><span class="n">Chrome</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">develop</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">web</span><span class="w"> </span><span class="o">[</span><span class="mi">114</span><span class="n">ms</span><span class="o">]</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="w">    </span><span class="err">•</span><span class="w"> </span><span class="n">Chrome</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">C</span><span class="p">:</span><span class="err">\</span><span class="n">Program</span><span class="w"> </span><span class="n">Files</span><span class="err">\</span><span class="n">Google</span><span class="err">\</span><span class="n">Chrome</span><span class="err">\</span><span class="n">Application</span><span class="err">\</span><span class="n">chrome</span><span class="p">.</span><span class="na">exe</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27"></a>
+<a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="o">[</span><span class="err">√</span><span class="o">]</span><span class="w"> </span><span class="n">Visual</span><span class="w"> </span><span class="n">Studio</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">develop</span><span class="w"> </span><span class="n">Windows</span><span class="w"> </span><span class="nf">apps</span><span class="w"> </span><span class="p">(</span><span class="n">Visual</span><span class="w"> </span><span class="n">Studio</span><span class="w"> </span><span class="n">Build</span><span class="w"> </span><span class="n">Tools</span><span class="w"> </span><span class="mi">2026</span><span class="w"> </span><span class="mf">18.9.0</span><span class="p">)</span><span class="w"> </span><span class="o">[</span><span class="mi">113</span><span class="n">ms</span><span class="o">]</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="w">    </span><span class="err">•</span><span class="w"> </span><span class="n">Visual</span><span class="w"> </span><span class="n">Studio</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">C</span><span class="p">:</span><span class="err">\</span><span class="n">Program</span><span class="w"> </span><span class="nf">Files</span><span class="w"> </span><span class="p">(</span><span class="n">x86</span><span class="p">)</span><span class="err">\</span><span class="n">Microsoft</span><span class="w"> </span><span class="n">Visual</span><span class="w"> </span><span class="n">Studio</span><span class="err">\</span><span class="mi">18</span><span class="err">\</span><span class="n">BuildTools</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30"></a><span class="w">    </span><span class="err">•</span><span class="w"> </span><span class="n">Visual</span><span class="w"> </span><span class="n">Studio</span><span class="w"> </span><span class="n">Build</span><span class="w"> </span><span class="n">Tools</span><span class="w"> </span><span class="mi">2026</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="mf">18.9.12105.275</span>
+<a id="__codelineno-3-31" name="__codelineno-3-31"></a><span class="w">    </span><span class="err">•</span><span class="w"> </span><span class="n">Windows</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="n">SDK</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="mf">10.0.26100.0</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32"></a>
+<a id="__codelineno-3-33" name="__codelineno-3-33"></a><span class="o">[</span><span class="err">√</span><span class="o">]</span><span class="w"> </span><span class="n">Connected</span><span class="w"> </span><span class="nf">device</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="n">available</span><span class="p">)</span><span class="w"> </span><span class="o">[</span><span class="mi">216</span><span class="n">ms</span><span class="o">]</span>
+<a id="__codelineno-3-34" name="__codelineno-3-34"></a><span class="w">    </span><span class="err">•</span><span class="w"> </span><span class="n">Windows</span><span class="w"> </span><span class="p">(</span><span class="n">desktop</span><span class="p">)</span><span class="w"> </span><span class="err">•</span><span class="w"> </span><span class="n">windows</span><span class="w"> </span><span class="err">•</span><span class="w"> </span><span class="n">windows</span><span class="o">-</span><span class="n">x64</span><span class="w">    </span><span class="err">•</span><span class="w"> </span><span class="n">Microsoft</span><span class="w"> </span><span class="n">Windows</span><span class="w"> </span><span class="o">[</span><span class="n">version</span><span class="w"> </span><span class="mf">10.0.26200.9457</span><span class="o">]</span>
+<a id="__codelineno-3-35" name="__codelineno-3-35"></a><span class="w">    </span><span class="err">•</span><span class="w"> </span><span class="n">Chrome</span><span class="w"> </span><span class="p">(</span><span class="n">web</span><span class="p">)</span><span class="w">      </span><span class="err">•</span><span class="w"> </span><span class="n">chrome</span><span class="w">  </span><span class="err">•</span><span class="w"> </span><span class="n">web</span><span class="o">-</span><span class="n">javascript</span><span class="w"> </span><span class="err">•</span><span class="w"> </span><span class="n">Google</span><span class="w"> </span><span class="n">Chrome</span><span class="w"> </span><span class="mf">151.0.7922.174</span>
+<a id="__codelineno-3-36" name="__codelineno-3-36"></a><span class="w">    </span><span class="err">•</span><span class="w"> </span><span class="n">Edge</span><span class="w"> </span><span class="p">(</span><span class="n">web</span><span class="p">)</span><span class="w">        </span><span class="err">•</span><span class="w"> </span><span class="n">edge</span><span class="w">    </span><span class="err">•</span><span class="w"> </span><span class="n">web</span><span class="o">-</span><span class="n">javascript</span><span class="w"> </span><span class="err">•</span><span class="w"> </span><span class="n">Microsoft</span><span class="w"> </span><span class="n">Edge</span><span class="w"> </span><span class="mf">153.0.4234.48</span>
+<a id="__codelineno-3-37" name="__codelineno-3-37"></a>
+<a id="__codelineno-3-38" name="__codelineno-3-38"></a><span class="o">[</span><span class="err">√</span><span class="o">]</span><span class="w"> </span><span class="n">Network</span><span class="w"> </span><span class="n">resources</span><span class="w"> </span><span class="o">[</span><span class="mi">274</span><span class="n">ms</span><span class="o">]</span>
+<a id="__codelineno-3-39" name="__codelineno-3-39"></a><span class="w">    </span><span class="err">•</span><span class="w"> </span><span class="n">All</span><span class="w"> </span><span class="n">expected</span><span class="w"> </span><span class="n">network</span><span class="w"> </span><span class="n">resources</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">available</span><span class="p">.</span>
+<a id="__codelineno-3-40" name="__codelineno-3-40"></a>
+<a id="__codelineno-3-41" name="__codelineno-3-41"></a><span class="err">•</span><span class="w"> </span><span class="n">No</span><span class="w"> </span><span class="n">issues</span><span class="w"> </span><span class="n">found</span><span class="o">!</span>
+</code></pre></div></td></tr></table></div>
+<p>Maintenant listez les applications (devices) reconnues par Flutter :</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">PS ...&gt; <span style="background-color:#fff5ce">flutter devices</span>                 </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Found 4 connected devices:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">sdk gphone16k x86 64 (mobile) • <span style="background-color:#fff5ce">emulator-5554</span> • android-x64    • Android 17 (API 37) (emulator)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Windows (desktop)             • <span style="background-color:#fff5ce">windows</span>       • windows-x64    • Microsoft Windows [version</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">10.0.26200.9457]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Chrome (web)                  • <span style="background-color:#fff5ce">chrome</span>        • web-javascript • Google Chrome 153.0.8010.48</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Edge (web)                    • <span style="background-color:#fff5ce">edge</span>          • web-javascript • Microsoft Edge 153.0.4234.48</span></span>
+</code></pre></div>
+
+<p>Dans la colonne 2, vous trouvez les identifiants des <em>devices</em> reconnus. Pour lancer l’application Flutter sur l’un d’eux :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>flutter run -d &lt;device_id&gt;
+</code></pre></div>
+<p>Par exemple pour lancer l’application [flutter_application_1] sur le navigateur Edge :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>flutter run -d edge
+</code></pre></div>
+<p>On obtient le résultat suivant dans le navigateur Edge :</p>
+<p><img src="images/10000000000004B3000003FC206B9EE0.png" width="361" height="306" style="width:9.55cm;height:8.1cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004B3000003FC206B9EE0.png" /></p>
+<p>Nous décrivons maintenant comment installer les outils pour le développement Android.</p>
+<p><span id="android-studio-et-les-outils-de-ligne-de-commande-android" name="android-studio-et-les-outils-de-ligne-de-commande-android" class="odt-bookmark-anchor"></span></p>
+<h2 id="23-android-studio-et-les-outils-de-ligne-de-commande-android">2.3. <span style="color: #2e74b5">Android Studio et les outils de ligne de commande Android</span></h2>
+<p>La cible mobile de ce cours est un téléphone <em>[Android]</em>. Pour compiler l&#x27;application et l&#x27;installer sur ce téléphone, <em>[Flutter]</em> a besoin du SDK <em>[Android]</em>, qui s&#x27;installe avec <em>[Android Studio]</em>, l&#x27;environnement de développement de Google. <em>[Android Studio]</em> n&#x27;est pas utilisé pour écrire le code - l&#x27;éditeur reste <em>[VSCode]</em> - il ne sert ici qu&#x27;à installer et à mettre à jour le SDK <em>[Android]</em>.</p>
+<ol>
+<li><strong><em>[Android Studio]</em></strong> : le télécharger gratuitement à l&#x27;adresse [<a href="https://developer.android.com/studio"><mark style="background-color: #fff5ce">https://developer.android.com/studio</mark></a><mark style="background-color: #fff5ce">]</mark> puis l&#x27;installer. Au premier lancement, l&#x27;assistant propose une installation standard : l&#x27;accepter, il télécharge le SDK <em>[Android]</em>.</li>
+</ol>
+<p><img src="images/100000000000061F000004EF3DA687E7.png" width="470" height="379" style="width:12.441cm;height:10.021cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000061F000004EF3DA687E7.png" /></p>
+<ol>
+<li>Ouvrir le <strong><em>[SDK Manager]</em></strong> d&#x27;<em>[Android Studio]</em> (menu <em>[Tools / SDK Manager]</em> lorsqu&#x27;un projet est ouvert, ou <em>[More Actions / SDK Manager]</em> depuis l&#x27;écran d&#x27;accueil) : c&#x27;est lui qui installe et met à jour les composants du SDK <em>[Android]</em>.</li>
+</ol>
+<ol start="2">
+  <li>Onglet <i>[SDK Platforms]</i> : vérifier qu&#x27;une plateforme <i>[Android]</i> récente est installée (la documentation de <i>[Flutter]</i> indique l&#x27;API 36 au moment de l&#x27;écriture).
+  </li>
+</ol>
+
+<p><img src="images/10000000000005D80000038F60765B8C.png" width="449" height="273" style="width:11.869cm;height:7.23cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005D80000038F60765B8C.png" /></p>
+<ol>
+  <li>Onglet <i>[SDK Tools]</i> : cocher <i><b>[Android SDK Command-line Tools (latest)]</b></i>, <i>[Android SDK Build-Tools]</i> et <i>[Android SDK Platform-Tools]</i> (ainsi que <i>[Android Emulator]</i> si vous voulez tester sur un émulateur), puis cliquer sur <i>[Apply]</i>. La documentation de <i>[Flutter]</i> recommande aussi <i>[CMake]</i> et <i>[NDK (Side by side)]</i>. Ce sont les <i>[Android SDK Command-line Tools]</i> qui manquent lorsque <i>[flutter doctor]</i> affiche « cmdline-tools component is missing ».
+  </li>
+  <li>Accepter les licences du SDK <i>[Android]</i> en tapant la commande suivante dans un terminal du projet Flutter, puis en répondant <i>[y]</i> à chaque question, jusqu&#x27;au message « All SDK package licenses accepted. » :
+  </li>
+</ol>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>flutter doctor –android-licenses
+</code></pre></div>
+<p><strong><em>[Remarque]</em></strong> : avec la version 23.0 des <em>[Android SDK Command-line Tools]</em>, la commande ci-dessus peut se terminer aussitôt, sans rien demander, en affichant « The --licenses option is no longer needed ». C&#x27;est un problème connu de <em>[Flutter]</em> (issues 191558 et 191487 sur github.com/flutter/flutter). Contournement : dans le <em>[SDK Manager]</em>, onglet <em>[SDK Tools]</em>, cocher <em>[Show Package Details]</em>, remplacer la version 23.0 des <em>[Android SDK Command-line Tools]</em> par la version 22.0, cliquer sur <em>[Apply]</em> puis relancer la commande.</p>
+<p><span id="tester-sur-un-emulateur-android" name="tester-sur-un-emulateur-android" class="odt-bookmark-anchor"></span></p>
+<h2 id="24-preparer-un-emulateur-android">2.4. <span style="color: #2e74b5">Préparer un émulateur Android</span></h2>
+<p>À défaut de téléphone, on peut tester l&#x27;application sur un émulateur <em>[Android]</em> : un téléphone virtuel qui s&#x27;exécute dans une fenêtre de l&#x27;ordinateur. <em>[Android Studio]</em> installe le programme <em>[Android Emulator]</em> (s&#x27;il a été coché dans le <em>[SDK Manager]</em>, cf. ci-dessus) mais pas d&#x27;appareil virtuel prêt à l&#x27;emploi : il faut en créer un.</p>
+<ol>
+  <li><i><b>[Prérequis]</b></i> : la virtualisation doit être activée dans le <i>[BIOS]</i> de l&#x27;ordinateur et, sous <i>[Windows]</i>, la fonctionnalité <i>[Plateforme de l&#x27;hyperviseur Windows]</i> doit être cochée (<i>[Panneau de configuration / Programmes / Activer ou désactiver des fonctionnalités Windows]</i>), ce qui demande un redémarrage. Sans cela, l&#x27;émulateur ne démarre pas ou reste très lent.
+  </li>
+  <li>Ouvrir le <i><b>[Device Manager]</b></i> d&#x27;<i>[Android Studio]</i> : <i>[More Actions / Virtual Device Manager]</i> depuis l&#x27;écran d&#x27;accueil, ou <i>[Tools / Device Manager]</i> lorsqu&#x27;un projet est ouvert (selon la version : <i>[View / Tool Windows / Device Manager]</i>).
+  </li>
+</ol>
+
+<p><img src="images/10000000000003980000036506662E07.png" width="276" height="261" style="width:7.301cm;height:6.9cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003980000036506662E07.png" /></p>
+<ol>
+  <li>Cliquer sur <i>[Create Device]</i>, choisir un modèle (par exemple <i>[Pixel 8]</i>) puis <i>[Next]</i>. Choisir une image système <i>[Android]</i> récente pour le processeur <i>[x86_64]</i> et la télécharger avec le lien <i>[Download]</i> situé à côté, puis <i>[Next]</i> et <i>[Finish]</i>.
+  </li>
+</ol>
+
+<p><img src="images/100000000000046D00000328B20C690A.png" width="340" height="242" style="width:8.991cm;height:6.41cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000046D00000328B20C690A.png" /></p>
+<p><img src="images/1000000000000584000001DFE5F7CD5D.png" width="424" height="144" style="width:11.21cm;height:3.799cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000584000001DFE5F7CD5D.png" /></p>
+<p><img src="images/10000000000006F50000055B37D51A84.png" width="534" height="411" style="width:14.139cm;height:10.88cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006F50000055B37D51A84.png" /></p>
+<ol>
+  <li>Démarrer l&#x27;émulateur avec le bouton <i>[Play]</i> du <i>[Device Manager] :</i>
+  </li>
+</ol>
+
+<p><img src="images/10000000000004250000011F4B23E279.png" width="318" height="86" style="width:8.421cm;height:2.281cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004250000011F4B23E279.png" /></p>
+<ol>
+  <li>Attendre que l&#x27;écran d&#x27;accueil d&#x27;<i>[Android]</i> soit affiché dans la fenêtre de l&#x27;émulateur : le premier démarrage peut durer plusieurs minutes. Vérifier ensuite que <i>[Flutter]</i> voit l&#x27;émulateur, qui doit figurer dans la liste (par exemple <i>[emulator-5554]</i>, plateforme <i>[android-x64]</i>) :
+  </li>
+</ol>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>flutter devices
+</code></pre></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">PS C:\Data\st-2026\dev\flutter-nestjs-sept-2026\rdvmedecins_flutter_client&gt; <span style="background-color:#fff5ce">flutter devices</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Found 4 connected devices:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="background-color:#fff5ce">sdk gphone16k x86 64 (mobile) • emulator-5554 • android-x64    • Android 17 (API 37)</span> (emulator)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  Windows (desktop)             • windows       • windows-x64    • Microsoft Windows [version</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  10.0.26200.9457]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  Chrome (web)                  • chrome        • web-javascript • Google Chrome 153.0.8010.48</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  Edge (web)                    • edge          • web-javascript • Microsoft Edge 153.0.4234.48</span></span>
+</code></pre></div>
+
+<p><strong><em>[Remarque]</em></strong> : si <em>[flutter devices]</em> n&#x27;affiche pas l&#x27;émulateur mais le message « Device emulator-5554 is offline », l&#x27;émulateur n&#x27;a pas fini de démarrer ou <em>[adb]</em> (l&#x27;outil qui relie l&#x27;ordinateur à l&#x27;appareil, installé avec les <em>[Android SDK Platform-Tools]</em>) est dans un état incohérent. Essayer dans l&#x27;ordre : (1) attendre l&#x27;écran d&#x27;accueil puis relancer la commande ; (2) redémarrer <em>[adb]</em> avec les trois commandes suivantes (sous <em>[Windows]</em>, dans <em>[PowerShell]</em>), la dernière devant afficher « device » et non « offline » ; (3) dans le <em>[Device Manager]</em>, menu <em>[⋮]</em> de l&#x27;appareil, choisir <em>[Cold Boot Now]</em>, voire <em>[Wipe Data]</em> en dernier recours.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>&amp; "$env:LOCALAPPDATA\Android\Sdk\platform-tools\adb.exe" kill-server
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>&amp; "$env:LOCALAPPDATA\Android\Sdk\platform-tools\adb.exe" start-server
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a>&amp; "$env:LOCALAPPDATA\Android\Sdk\platform-tools\adb.exe" devices
+</code></pre></div></td></tr></table></div>
+<p>Si le problème persiste, vérifier avec <em>[where.exe adb]</em> qu&#x27;aucun autre <em>[adb]</em>, d&#x27;une version différente, ne se trouve dans le <em>[PATH]</em> : deux versions d&#x27;<em>[adb]</em> qui se disputent la connexion provoquent ce symptôme.</p>
+<p>Une fois l&#x27;émulateur reconnu, l&#x27;application se lance dessus avec la commande suivante (voir paragraphe <mark style="background-color: #fff5ce"><a href="etude-de-cas--le-client-flutter-de-lapplication-rdvmedecins.html#refheadingtoc614471043670173">Installation et exécution</a></mark>) : </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>flutter run -d emulator-5554
+</code></pre></div>
+<p><img src="images/1000000000000326000005D706FD3BC3.png" width="242" height="449" style="width:6.399cm;height:11.869cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000326000005D706FD3BC3.png" /></p>
+<p><span id="preparer-le-telephone-android" name="preparer-le-telephone-android" class="odt-bookmark-anchor"></span></p>
+<h2 id="25-preparer-le-telephone-android">2.5. <span style="color: #2e74b5">Préparer le téléphone Android</span></h2>
+<p>Pour exécuter l&#x27;application sur un vrai téléphone <em>[Android]</em>, celui-ci doit accepter d&#x27;être piloté depuis l&#x27;ordinateur :</p>
+<ol>
+  <li>Activer les options pour les développeurs : ouvrir <i>[Paramètres / À propos du téléphone]</i> puis appuyer plusieurs fois (7 en général) sur <i>[Numéro de build]</i> jusqu&#x27;à ce que le téléphone indique que vous êtes développeur. Les intitulés exacts varient selon le fabricant.
+  </li>
+  <li>Activer le <i>[Débogage USB]</i> dans les <i>[Options pour les développeurs]</i> (menu ajouté par l&#x27;étape précédente).
+  </li>
+  <li>Brancher le téléphone à l&#x27;ordinateur avec un câble USB qui transfère des données (pas seulement de la charge) et accepter, sur le téléphone, la demande d&#x27;autorisation du débogage USB. Sous Windows, si le téléphone n&#x27;est pas reconnu, installer le pilote USB de son fabricant (« OEM USB drivers », cf. [<a href="https://developer.android.com/studio/run/oem-usb"><mark style="background-color: #fff5ce">https://developer.android.com/studio/run/oem-usb</mark></a><mark style="background-color: #fff5ce">]</mark>).
+  </li>
+  <li>Vérifier que <i>[Flutter]</i> voit le téléphone : il doit apparaître dans la liste affichée par la commande suivante, avec la plateforme <i>[android]</i> :
+  </li>
+</ol>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>flutter devices
+</code></pre></div>
+<p>Le téléphone accèdera au serveur <em>[NestJS]</em> par l&#x27;adresse IP de l&#x27;ordinateur sur le réseau local (et non par <em>[localhost]</em>) : ce réglage est décrit au chapitre 5.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        Ce tutoriel, rédigé par l’IA d’Anthropic <strong>Claude</strong> à la demande de <strong>Serge Tahé</strong>, est mis à la disposition du public selon les termes de la
+        <em>licence Creative Commons Attribution – Pas d’utilisation commerciale –
+        ShareAlike 3.0 Unported</em>.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
