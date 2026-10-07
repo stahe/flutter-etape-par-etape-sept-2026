@@ -1425,9 +1425,9 @@
 <p>La première commande ajoute au projet les dossiers propres à chaque plate-forme (<strong><em>[android/]</em></strong>, <strong><em>[web/]</em></strong>), comme pour les exemples ; elle ne modifie aucun fichier existant, et le fichier <strong><em>[android/app/src/main/AndroidManifest.xml]</em></strong> livré (celui de l&#x27;exemple 22) est conservé. Puis, au choix :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">flutter</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="n">emulator</span><span class="o">-</span><span class="mi">5554</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">flutter</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="n">R58N12ABCDE</span> <span class="o">--</span><span class="n">dart</span><span class="o">-</span><span class="n">define</span><span class="o">=</span><span class="n">SERVEUR</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">192.168.1.20</span><span class="p">:</span><span class="mi">8080</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">flutter</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="n">chrome</span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>flutter run -d emulator-5554
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>flutter run -d R58N12ABCDE --dart-define=SERVEUR=http://192.168.1.20:8080
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>flutter run -d chrome
 </code></pre></div></td></tr></table></div>
 <ul>
   <li>la première ligne lance l&#x27;application sur l&#x27;émulateur <i>[Android]</i> (la commande <i>[flutter devices]</i> donne le nom des appareils disponibles). L&#x27;émulateur joint le serveur à l&#x27;adresse <i><b>[10.0.2.2:8080]</b></i> (cf. exemple 22) ;
@@ -1505,26 +1505,26 @@
 <span class="normal"><a href="#__codelineno-2-17">17</a></span>
 <span class="normal"><a href="#__codelineno-2-18">18</a></span>
 <span class="normal"><a href="#__codelineno-2-19">19</a></span>
-<span class="normal"><a href="#__codelineno-2-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">rdvmedecins_flutter</span><span class="o">/</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="err">├── pubspec.yaml               les bibliothèques, les ressources</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="err">├── analysis_options.yaml      les règles de l'analyseur de code</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="err">├── web_dev_config.yaml        le serveur de développement web (proxy /api)</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="err">├── android/                   le projet Android (dont AndroidManifest.xml)</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="err">├── web/                       la page HTML de la version web</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="err">├── assets/</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="err">│   ├── i18n/                  les dictionnaires fr.json, en.json</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="err">│   └── polices/               la police RobotoMono</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="err">├── test/                      tests unitaires ; fabrication des copies d'écran</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="err">└── lib/</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">    </span><span class="err">├── main.dart              le démarrage</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">    </span><span class="err">├── config.dart            l'adresse du serveur</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w">    </span><span class="err">├── routeur.dart           les écrans, leurs adresses, leurs droits</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">    </span><span class="err">├── formatage.dart         la mise en forme des heures et des jours</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">    </span><span class="err">├── api/                   la couche d'accès à l'API</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="w">    </span><span class="err">├── i18n/                  les langues</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="w">    </span><span class="err">├── etat/                  session, messages, cache (ChangeNotifier)</span>
-<a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="w">    </span><span class="err">├── widgets/               le gabarit et les widgets réutilisables</span>
-<a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="w">    </span><span class="err">└── pages/                 les écrans</span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>rdvmedecins_flutter/
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>├── pubspec.yaml               les bibliothèques, les ressources
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>├── analysis_options.yaml      les règles de l'analyseur de code
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>├── web_dev_config.yaml        le serveur de développement web (proxy /api)
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>├── android/                   le projet Android (dont AndroidManifest.xml)
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>├── web/                       la page HTML de la version web
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>├── assets/
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>│   ├── i18n/                  les dictionnaires fr.json, en.json
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>│   └── polices/               la police RobotoMono
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>├── test/                      tests unitaires ; fabrication des copies d'écran
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>└── lib/
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>    ├── main.dart              le démarrage
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>    ├── config.dart            l'adresse du serveur
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>    ├── routeur.dart           les écrans, leurs adresses, leurs droits
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a>    ├── formatage.dart         la mise en forme des heures et des jours
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a>    ├── api/                   la couche d'accès à l'API
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a>    ├── i18n/                  les langues
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a>    ├── etat/                  session, messages, cache (ChangeNotifier)
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a>    ├── widgets/               le gabarit et les widgets réutilisables
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a>    └── pages/                 les écrans
 </code></pre></div></td></tr></table></div>
 <p>C&#x27;est l&#x27;architecture recommandée par le guide de <em>[Flutter]</em> (« App architecture »), en plus simple :</p>
 <ul>
@@ -1582,47 +1582,47 @@
 <span class="normal"><a href="#__codelineno-3-38">38</a></span>
 <span class="normal"><a href="#__codelineno-3-39">39</a></span>
 <span class="normal"><a href="#__codelineno-3-40">40</a></span>
-<span class="normal"><a href="#__codelineno-3-41">41</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="gh"># ==========================================================================</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="gh"># pubspec.yaml - le client Flutter de l'application RdvMedecins</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="gh"># ==========================================================================</span>
+<span class="normal"><a href="#__codelineno-3-41">41</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># ==========================================================================</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="c1"># pubspec.yaml - le client Flutter de l'application RdvMedecins</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="c1"># ==========================================================================</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a>name: rdvmedecins_flutter
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a>description: Le client Flutter (Android, web) de l'application de prise de rendez-vous RdvMedecins.
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a>publish_to: none
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a>version: 1.0.0
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rdvmedecins_flutter</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Le client Flutter (Android, web) de l'application de prise de rendez-vous RdvMedecins.</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="nt">publish_to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">none</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0.0</span>
 <a id="__codelineno-3-9" name="__codelineno-3-9"></a>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a>environment:
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a>  sdk: ^3.12.0
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="nt">environment</span><span class="p">:</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">  </span><span class="nt">sdk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^3.12.0</span>
 <a id="__codelineno-3-12" name="__codelineno-3-12"></a>
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a>dependencies:
-<a id="__codelineno-3-14" name="__codelineno-3-14"></a>  flutter:
-<a id="__codelineno-3-15" name="__codelineno-3-15"></a>    sdk: flutter
-<a id="__codelineno-3-16" name="__codelineno-3-16"></a>  flutter_localizations:
-<a id="__codelineno-3-17" name="__codelineno-3-17"></a>    sdk: flutter
-<a id="__codelineno-3-18" name="__codelineno-3-18"></a>  flutter_web_plugins:
-<a id="__codelineno-3-19" name="__codelineno-3-19"></a>    sdk: flutter
-<a id="__codelineno-3-20" name="__codelineno-3-20"></a>  intl: any
-<a id="__codelineno-3-21" name="__codelineno-3-21"></a>  go_router: ^16.2.0
-<a id="__codelineno-3-22" name="__codelineno-3-22"></a>  provider: ^6.1.5
-<a id="__codelineno-3-23" name="__codelineno-3-23"></a>  shared_preferences: ^2.5.3
-<a id="__codelineno-3-24" name="__codelineno-3-24"></a>  http: ^1.5.0
-<a id="__codelineno-3-25" name="__codelineno-3-25"></a>  flutter_svg: ^2.2.1
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="nt">dependencies</span><span class="p">:</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="w">  </span><span class="nt">flutter</span><span class="p">:</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="w">    </span><span class="nt">sdk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flutter</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="w">  </span><span class="nt">flutter_localizations</span><span class="p">:</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="w">    </span><span class="nt">sdk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flutter</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="w">  </span><span class="nt">flutter_web_plugins</span><span class="p">:</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="w">    </span><span class="nt">sdk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flutter</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="w">  </span><span class="nt">intl</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">any</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="w">  </span><span class="nt">go_router</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^16.2.0</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="w">  </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^6.1.5</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="w">  </span><span class="nt">shared_preferences</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^2.5.3</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="w">  </span><span class="nt">http</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^1.5.0</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="w">  </span><span class="nt">flutter_svg</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^2.2.1</span>
 <a id="__codelineno-3-26" name="__codelineno-3-26"></a>
-<a id="__codelineno-3-27" name="__codelineno-3-27"></a>dev_dependencies:
-<a id="__codelineno-3-28" name="__codelineno-3-28"></a>  flutter_test:
-<a id="__codelineno-3-29" name="__codelineno-3-29"></a>    sdk: flutter
-<a id="__codelineno-3-30" name="__codelineno-3-30"></a>  flutter_lints: ^6.0.0
+<a id="__codelineno-3-27" name="__codelineno-3-27"></a><span class="nt">dev_dependencies</span><span class="p">:</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="w">  </span><span class="nt">flutter_test</span><span class="p">:</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="w">    </span><span class="nt">sdk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flutter</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30"></a><span class="w">  </span><span class="nt">flutter_lints</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^6.0.0</span>
 <a id="__codelineno-3-31" name="__codelineno-3-31"></a>
-<a id="__codelineno-3-32" name="__codelineno-3-32"></a>flutter:
-<a id="__codelineno-3-33" name="__codelineno-3-33"></a>  uses-material-design: true
-<a id="__codelineno-3-34" name="__codelineno-3-34"></a>  assets:
-<a id="__codelineno-3-35" name="__codelineno-3-35"></a><span class="w">    </span><span class="k">-</span><span class="w"> </span>assets/i18n/
-<a id="__codelineno-3-36" name="__codelineno-3-36"></a>  fonts:
-<a id="__codelineno-3-37" name="__codelineno-3-37"></a><span class="w">    </span><span class="k">-</span><span class="w"> </span>family: RobotoMono
-<a id="__codelineno-3-38" name="__codelineno-3-38"></a>      fonts:
-<a id="__codelineno-3-39" name="__codelineno-3-39"></a><span class="w">        </span><span class="k">-</span><span class="w"> </span>asset: assets/polices/RobotoMono-Regular.ttf
-<a id="__codelineno-3-40" name="__codelineno-3-40"></a><span class="w">        </span><span class="k">-</span><span class="w"> </span>asset: assets/polices/RobotoMono-Bold.ttf
-<a id="__codelineno-3-41" name="__codelineno-3-41"></a>          weight: 700
+<a id="__codelineno-3-32" name="__codelineno-3-32"></a><span class="nt">flutter</span><span class="p">:</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33"></a><span class="w">  </span><span class="nt">uses-material-design</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-3-34" name="__codelineno-3-34"></a><span class="w">  </span><span class="nt">assets</span><span class="p">:</span>
+<a id="__codelineno-3-35" name="__codelineno-3-35"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">assets/i18n/</span>
+<a id="__codelineno-3-36" name="__codelineno-3-36"></a><span class="w">  </span><span class="nt">fonts</span><span class="p">:</span>
+<a id="__codelineno-3-37" name="__codelineno-3-37"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">family</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RobotoMono</span>
+<a id="__codelineno-3-38" name="__codelineno-3-38"></a><span class="w">      </span><span class="nt">fonts</span><span class="p">:</span>
+<a id="__codelineno-3-39" name="__codelineno-3-39"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">asset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">assets/polices/RobotoMono-Regular.ttf</span>
+<a id="__codelineno-3-40" name="__codelineno-3-40"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">asset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">assets/polices/RobotoMono-Bold.ttf</span>
+<a id="__codelineno-3-41" name="__codelineno-3-41"></a><span class="w">          </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">700</span>
 </code></pre></div></td></tr></table></div>
 <p>Les bibliothèques des exemples, moins <em>[flutter_svg]</em>... qui reste : le captcha est une image SVG. Seules ressources : les dictionnaires et la police à chasse fixe des comptes de démonstration.</p>
 <h3 id="1152-analysis_optionsyaml">11.5.2. <span style="color: #1f4d78">analysis_options.yaml</span></h3>
@@ -1649,30 +1649,30 @@
 <span class="normal"><a href="#__codelineno-4-21">21</a></span>
 <span class="normal"><a href="#__codelineno-4-22">22</a></span>
 <span class="normal"><a href="#__codelineno-4-23">23</a></span>
-<span class="normal"><a href="#__codelineno-4-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="err">#</span><span class="w"> </span><span class="o">==========================================================================</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="err">#</span><span class="w"> </span><span class="n">analysis_options</span><span class="p">.</span><span class="na">yaml</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">règles</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">l</span><span class="err">'</span><span class="n">analyseur</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">Dart</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="err">#</span><span class="w"> </span><span class="o">--------------------------------------------------------------------------</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="err">#</span><span class="w"> </span><span class="n">L</span><span class="err">'</span><span class="n">analyseur</span><span class="w"> </span><span class="n">vérifie</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">pendant</span><span class="w"> </span><span class="n">qu</span><span class="err">'</span><span class="n">on</span><span class="w"> </span><span class="n">le</span><span class="w"> </span><span class="nf">tape</span><span class="w"> </span><span class="p">(</span><span class="n">VS</span><span class="w"> </span><span class="n">Code</span><span class="w"> </span><span class="n">souligne</span><span class="w"> </span><span class="n">les</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="err">#</span><span class="w"> </span><span class="n">erreurs</span><span class="p">)</span><span class="w"> </span><span class="n">et</span><span class="w"> </span><span class="n">par</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">commande</span><span class="w"> </span><span class="n">flutter</span><span class="w"> </span><span class="n">analyze</span><span class="p">.</span><span class="w"> </span><span class="n">On</span><span class="w"> </span><span class="n">part</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="n">règles</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="err">#</span><span class="w"> </span><span class="n">recommandées</span><span class="w"> </span><span class="n">par</span><span class="w"> </span><span class="n">l</span><span class="err">'</span><span class="n">équipe</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="nf">Flutter</span><span class="w"> </span><span class="p">(</span><span class="n">paquet</span><span class="w"> </span><span class="n">flutter_lints</span><span class="p">)...</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="err">#</span><span class="w"> </span><span class="o">==========================================================================</span>
+<span class="normal"><a href="#__codelineno-4-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># ==========================================================================</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="c1"># analysis_options.yaml - les règles de l'analyseur de code Dart</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1"># --------------------------------------------------------------------------</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="c1"># L'analyseur vérifie le code pendant qu'on le tape (VS Code souligne les</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="c1"># erreurs) et par la commande flutter analyze. On part des règles</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="c1"># recommandées par l'équipe de Flutter (paquet flutter_lints)...</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="c1"># ==========================================================================</span>
 <a id="__codelineno-4-8" name="__codelineno-4-8"></a>
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="nl">include</span><span class="p">:</span><span class="w"> </span><span class="n">package</span><span class="p">:</span><span class="n">flutter_lints</span><span class="o">/</span><span class="n">flutter</span><span class="p">.</span><span class="na">yaml</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="nt">include</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">package:flutter_lints/flutter.yaml</span>
 <a id="__codelineno-4-10" name="__codelineno-4-10"></a>
-<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="nl">analyzer</span><span class="p">:</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">  </span><span class="n">language</span><span class="p">:</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="n">en</span><span class="w"> </span><span class="n">plus</span><span class="w"> </span><span class="n">strict</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">pas</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">conversion</span><span class="w"> </span><span class="n">implicite</span><span class="w"> </span><span class="n">d</span><span class="err">'</span><span class="n">un</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">dynamic</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">    </span><span class="n">strict</span><span class="o">-</span><span class="n">casts</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="w">    </span><span class="n">strict</span><span class="o">-</span><span class="n">raw</span><span class="o">-</span><span class="n">types</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="nt">analyzer</span><span class="p">:</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">  </span><span class="nt">language</span><span class="p">:</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">    </span><span class="c1"># ... en plus strict : pas de conversion implicite d'un type dynamic</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">    </span><span class="nt">strict-casts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="w">    </span><span class="nt">strict-raw-types</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <a id="__codelineno-4-16" name="__codelineno-4-16"></a>
-<a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="nl">linter</span><span class="p">:</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">  </span><span class="n">rules</span><span class="p">:</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="n">des</span><span class="w"> </span><span class="n">guillemets</span><span class="w"> </span><span class="n">simples</span><span class="w"> </span><span class="n">partout</span><span class="p">,</span><span class="w"> </span><span class="n">comme</span><span class="w"> </span><span class="n">dans</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">exemples</span><span class="w"> </span><span class="n">du</span><span class="w"> </span><span class="n">cours</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="w">    </span><span class="n">prefer_single_quotes</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="s">"final"</span><span class="w"> </span><span class="n">pour</span><span class="w"> </span><span class="n">une</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="n">locale</span><span class="w"> </span><span class="n">qui</span><span class="w"> </span><span class="n">n</span><span class="err">'</span><span class="n">est</span><span class="w"> </span><span class="n">jamais</span><span class="w"> </span><span class="n">réaffectée</span>
-<a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="w">    </span><span class="n">prefer_final_locals</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
-<a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">chaînes</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">caractères</span><span class="w"> </span><span class="n">trop</span><span class="w"> </span><span class="n">longues</span><span class="w"> </span><span class="n">sont</span><span class="w"> </span><span class="nf">permises</span><span class="w"> </span><span class="p">(</span><span class="n">textes</span><span class="w"> </span><span class="n">en</span><span class="w"> </span><span class="n">français</span><span class="p">)</span>
-<a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="w">    </span><span class="n">lines_longer_than_80_chars</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="nt">linter</span><span class="p">:</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="w">    </span><span class="c1"># des guillemets simples partout, comme dans les exemples du cours</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="w">    </span><span class="nt">prefer_single_quotes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="w">    </span><span class="c1"># "final" pour une variable locale qui n'est jamais réaffectée</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="w">    </span><span class="nt">prefer_final_locals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="w">    </span><span class="c1"># les chaînes de caractères trop longues sont permises (textes en français)</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="w">    </span><span class="nt">lines_longer_than_80_chars</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 </code></pre></div></td></tr></table></div>
 <p>Les règles de l&#x27;analyseur, celles des exemples :</p>
 <ul>
@@ -1700,21 +1700,21 @@
 <span class="normal"><a href="#__codelineno-5-12">12</a></span>
 <span class="normal"><a href="#__codelineno-5-13">13</a></span>
 <span class="normal"><a href="#__codelineno-5-14">14</a></span>
-<span class="normal"><a href="#__codelineno-5-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="gh"># ==========================================================================</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="gh"># web_dev_config.yaml - le serveur de développement WEB de Flutter</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="gh"># --------------------------------------------------------------------------</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="gh"># flutter run -d chrome sert l'application sur http://localhost:5173 et</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="gh"># transmet toute requête /api/... au serveur JSON RdvMedecins (port 8080) :</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="gh"># pour le navigateur, l'application et l'API ont la MÊME origine (pas de</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="gh"># CORS, et le cookie du jeton circule).</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="gh"># ==========================================================================</span>
+<span class="normal"><a href="#__codelineno-5-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1"># ==========================================================================</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="c1"># web_dev_config.yaml - le serveur de développement WEB de Flutter</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="c1"># --------------------------------------------------------------------------</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="c1"># flutter run -d chrome sert l'application sur http://localhost:5173 et</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="c1"># transmet toute requête /api/... au serveur JSON RdvMedecins (port 8080) :</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="c1"># pour le navigateur, l'application et l'API ont la MÊME origine (pas de</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="c1"># CORS, et le cookie du jeton circule).</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="c1"># ==========================================================================</span>
 <a id="__codelineno-5-9" name="__codelineno-5-9"></a>
-<a id="__codelineno-5-10" name="__codelineno-5-10"></a>server:
-<a id="__codelineno-5-11" name="__codelineno-5-11"></a>  host: localhost
-<a id="__codelineno-5-12" name="__codelineno-5-12"></a>  port: 5173
-<a id="__codelineno-5-13" name="__codelineno-5-13"></a>  proxy:
-<a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="w">    </span><span class="k">-</span><span class="w"> </span>target: "http://localhost:8080/"
-<a id="__codelineno-5-15" name="__codelineno-5-15"></a>      prefix: "/api/"
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="nt">server</span><span class="p">:</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="w">  </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5173</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="w">  </span><span class="nt">proxy</span><span class="p">:</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">target</span><span class="p">:</span><span class="w"> </span><span class="s">"http://localhost:8080/"</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="w">      </span><span class="nt">prefix</span><span class="p">:</span><span class="w"> </span><span class="s">"/api/"</span>
 </code></pre></div></td></tr></table></div>
 <p>Celui de l&#x27;exemple 22 : en développement web, les requêtes /api sont transmises au serveur JSON.</p>
 <h2 id="116-le-demarrage-de-lapplication">11.6. <span style="color: #2e74b5">Le démarrage de l&#x27;application</span></h2>
@@ -1754,41 +1754,41 @@
 <span class="normal"><a href="#__codelineno-6-33">33</a></span>
 <span class="normal"><a href="#__codelineno-6-34">34</a></span>
 <span class="normal"><a href="#__codelineno-6-35">35</a></span>
-<span class="normal"><a href="#__codelineno-6-36">36</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="o">//</span> <span class="o">=========================================================================</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="o">//</span> <span class="n">lib</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">dart</span> <span class="o">-</span> <span class="n">OÙ</span> <span class="n">est</span> <span class="n">le</span> <span class="n">serveur</span> <span class="n">JSON</span> <span class="err">?</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="o">//</span> <span class="o">-------------------------------------------------------------------------</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="o">//</span> <span class="n">La</span> <span class="n">question</span> <span class="n">ne</span> <span class="n">se</span> <span class="n">pose</span> <span class="n">pas</span> <span class="n">pour</span> <span class="n">une</span> <span class="n">application</span> <span class="n">web</span> <span class="n">servie</span> <span class="n">par</span> <span class="n">le</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="o">//</span> <span class="n">serveur</span> <span class="n">lui</span><span class="o">-</span><span class="n">même</span> <span class="p">:</span> <span class="n">les</span> <span class="n">requêtes</span> <span class="n">partent</span> <span class="n">vers</span> <span class="n">la</span> <span class="n">MÊME</span> <span class="n">origine</span> <span class="n">que</span> <span class="n">la</span> <span class="n">page</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="o">//</span> <span class="p">(</span><span class="n">une</span> <span class="n">adresse</span> <span class="n">relative</span><span class="p">,</span> <span class="o">/</span><span class="n">api</span><span class="o">/...</span><span class="p">)</span><span class="o">.</span> <span class="n">Mais</span> <span class="n">une</span> <span class="n">application</span> <span class="n">MOBILE</span> <span class="n">n</span><span class="s1">'a pas</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="o">//</span> <span class="n">d</span><span class="s1">'origine : il faut lui donner l'</span><span class="n">adresse</span> <span class="n">complète</span> <span class="n">du</span> <span class="n">serveur</span><span class="o">.</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="o">//</span>   <span class="o">-</span> <span class="n">l</span><span class="s1">'émulateur Android voit l'</span><span class="n">ordinateur</span> <span class="n">qui</span> <span class="n">le</span> <span class="n">fait</span> <span class="n">tourner</span> <span class="n">à</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="o">//</span>     <span class="n">l</span><span class="s1">'adresse 10.0.2.2 (localhost, pour lui, c'</span><span class="n">est</span> <span class="n">l</span><span class="s1">'émulateur lui-même) ;</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="o">//</span>   <span class="o">-</span> <span class="n">un</span> <span class="n">vrai</span> <span class="n">téléphone</span><span class="p">,</span> <span class="n">relié</span> <span class="n">au</span> <span class="n">même</span> <span class="n">réseau</span> <span class="n">Wi</span><span class="o">-</span><span class="n">Fi</span> <span class="n">que</span> <span class="n">l</span><span class="s1">'ordinateur, doit</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="o">//</span>     <span class="n">utiliser</span> <span class="n">l</span><span class="s1">'adresse de l'</span><span class="n">ordinateur</span> <span class="n">sur</span> <span class="n">ce</span> <span class="n">réseau</span> <span class="p">(</span><span class="mf">192.168.1.20</span><span class="o">...</span><span class="p">)</span> <span class="p">:</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="o">//</span>     <span class="n">on</span> <span class="n">la</span> <span class="n">donne</span> <span class="n">au</span> <span class="n">lancement</span> <span class="n">de</span> <span class="n">l</span><span class="s1">'application :</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="o">//</span>         <span class="n">flutter</span> <span class="n">run</span> <span class="o">--</span><span class="n">dart</span><span class="o">-</span><span class="n">define</span><span class="o">=</span><span class="n">SERVEUR</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">192.168.1.20</span><span class="p">:</span><span class="mi">8080</span> <span class="o">...</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="o">//</span>   <span class="o">-</span> <span class="n">en</span> <span class="n">développement</span> <span class="n">web</span> <span class="p">(</span><span class="n">flutter</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="n">chrome</span><span class="p">),</span> <span class="n">le</span> <span class="n">serveur</span> <span class="n">de</span>
-<a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="o">//</span>     <span class="n">développement</span> <span class="n">de</span> <span class="n">Flutter</span> <span class="n">transmet</span> <span class="n">les</span> <span class="n">requêtes</span> <span class="o">/</span><span class="n">api</span> <span class="n">au</span> <span class="n">serveur</span> <span class="n">JSON</span>
-<a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="o">//</span>     <span class="p">(</span><span class="n">fichier</span> <span class="n">web_dev_config</span><span class="o">.</span><span class="n">yaml</span><span class="p">)</span> <span class="p">:</span> <span class="n">une</span> <span class="n">adresse</span> <span class="n">relative</span> <span class="n">suffit</span> <span class="p">;</span>
-<a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="o">//</span>   <span class="o">-</span> <span class="n">sur</span> <span class="n">un</span> <span class="n">ordinateur</span> <span class="p">(</span><span class="n">Windows</span><span class="p">,</span> <span class="n">macOS</span><span class="p">,</span> <span class="n">Linux</span><span class="p">)</span> <span class="p">:</span> <span class="n">localhost</span><span class="o">.</span>
-<a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="o">//</span> <span class="o">=========================================================================</span>
+<span class="normal"><a href="#__codelineno-6-36">36</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="c1">// =========================================================================</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="c1">// lib/config.dart - OÙ est le serveur JSON ?</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="c1">// -------------------------------------------------------------------------</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="c1">// La question ne se pose pas pour une application web servie par le</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="c1">// serveur lui-même : les requêtes partent vers la MÊME origine que la page</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="c1">// (une adresse relative, /api/...). Mais une application MOBILE n'a pas</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="c1">// d'origine : il faut lui donner l'adresse complète du serveur.</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="c1">//   - l'émulateur Android voit l'ordinateur qui le fait tourner à</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="c1">//     l'adresse 10.0.2.2 (localhost, pour lui, c'est l'émulateur lui-même) ;</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="c1">//   - un vrai téléphone, relié au même réseau Wi-Fi que l'ordinateur, doit</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="c1">//     utiliser l'adresse de l'ordinateur sur ce réseau (192.168.1.20...) :</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="c1">//     on la donne au lancement de l'application :</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="c1">//         flutter run --dart-define=SERVEUR=http://192.168.1.20:8080 ...</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="c1">//   - en développement web (flutter run -d chrome), le serveur de</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="c1">//     développement de Flutter transmet les requêtes /api au serveur JSON</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="c1">//     (fichier web_dev_config.yaml) : une adresse relative suffit ;</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="c1">//   - sur un ordinateur (Windows, macOS, Linux) : localhost.</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="c1">// =========================================================================</span>
 <a id="__codelineno-6-19" name="__codelineno-6-19"></a>
-<a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="kn">import</span><span class="w"> </span><span class="s1">'package:flutter/foundation.dart'</span><span class="p">;</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="k">import</span><span class="w"> </span><span class="s1">'package:flutter/foundation.dart'</span><span class="p">;</span>
 <a id="__codelineno-6-21" name="__codelineno-6-21"></a>
-<a id="__codelineno-6-22" name="__codelineno-6-22"></a><span class="o">//</span> <span class="n">la</span> <span class="n">valeur</span> <span class="n">donnée</span> <span class="n">par</span> <span class="o">--</span><span class="n">dart</span><span class="o">-</span><span class="n">define</span><span class="o">=</span><span class="n">SERVEUR</span><span class="o">=...</span><span class="p">,</span> <span class="s1">''</span> <span class="n">par</span> <span class="n">défaut</span><span class="o">.</span>
-<a id="__codelineno-6-23" name="__codelineno-6-23"></a><span class="o">//</span> <span class="n">String</span><span class="o">.</span><span class="n">fromEnvironment</span> <span class="n">est</span> <span class="n">évaluée</span> <span class="n">à</span> <span class="n">la</span> <span class="n">COMPILATION</span> <span class="p">:</span> <span class="n">c</span><span class="s1">'est une constante</span>
-<a id="__codelineno-6-24" name="__codelineno-6-24"></a><span class="n">const</span> <span class="n">_serveurImpose</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="n">fromEnvironment</span><span class="p">(</span><span class="s1">'SERVEUR'</span><span class="p">);</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22"></a><span class="c1">// la valeur donnée par --dart-define=SERVEUR=..., '' par défaut.</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23"></a><span class="c1">// String.fromEnvironment est évaluée à la COMPILATION : c'est une constante</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24"></a><span class="k">const</span><span class="w"> </span><span class="n">_serveurImpose</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">String</span><span class="p">.</span><span class="n">fromEnvironment</span><span class="p">(</span><span class="s1">'SERVEUR'</span><span class="p">);</span>
 <a id="__codelineno-6-25" name="__codelineno-6-25"></a>
-<a id="__codelineno-6-26" name="__codelineno-6-26"></a><span class="k">class</span><span class="w"> </span><span class="nc">Config</span> <span class="p">{</span>
-<a id="__codelineno-6-27" name="__codelineno-6-27"></a>  <span class="o">//</span> <span class="n">kIsWeb</span> <span class="p">:</span> <span class="n">vrai</span> <span class="n">si</span> <span class="n">l</span><span class="s1">'application tourne dans un navigateur ;</span>
-<a id="__codelineno-6-28" name="__codelineno-6-28"></a>  <span class="o">//</span> <span class="n">defaultTargetPlatform</span> <span class="p">:</span> <span class="n">le</span> <span class="n">système</span> <span class="p">(</span><span class="n">android</span><span class="p">,</span> <span class="n">iOS</span><span class="p">,</span> <span class="n">windows</span><span class="o">...</span><span class="p">)</span>
-<a id="__codelineno-6-29" name="__codelineno-6-29"></a>  <span class="n">static</span> <span class="n">String</span> <span class="n">urlServeur</span> <span class="o">=</span> <span class="n">_serveurImpose</span><span class="o">.</span><span class="n">isNotEmpty</span>
-<a id="__codelineno-6-30" name="__codelineno-6-30"></a>      <span class="err">?</span> <span class="n">_serveurImpose</span>
-<a id="__codelineno-6-31" name="__codelineno-6-31"></a>      <span class="p">:</span> <span class="n">kIsWeb</span>
-<a id="__codelineno-6-32" name="__codelineno-6-32"></a>      <span class="err">?</span> <span class="s1">''</span> <span class="o">//</span> <span class="n">même</span> <span class="n">origine</span> <span class="p">:</span> <span class="n">adresses</span> <span class="n">relatives</span>
-<a id="__codelineno-6-33" name="__codelineno-6-33"></a>      <span class="p">:</span> <span class="n">defaultTargetPlatform</span> <span class="o">==</span> <span class="n">TargetPlatform</span><span class="o">.</span><span class="n">android</span>
-<a id="__codelineno-6-34" name="__codelineno-6-34"></a>      <span class="err">?</span> <span class="s1">'http://10.0.2.2:8080'</span>
-<a id="__codelineno-6-35" name="__codelineno-6-35"></a>      <span class="p">:</span> <span class="s1">'http://localhost:8080'</span><span class="p">;</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26"></a><span class="kd">class</span><span class="w"> </span><span class="nc">Config</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27"></a><span class="w">  </span><span class="c1">// kIsWeb : vrai si l'application tourne dans un navigateur ;</span>
+<a id="__codelineno-6-28" name="__codelineno-6-28"></a><span class="w">  </span><span class="c1">// defaultTargetPlatform : le système (android, iOS, windows...)</span>
+<a id="__codelineno-6-29" name="__codelineno-6-29"></a><span class="w">  </span><span class="kd">static</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">urlServeur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_serveurImpose</span><span class="p">.</span><span class="n">isNotEmpty</span>
+<a id="__codelineno-6-30" name="__codelineno-6-30"></a><span class="w">      </span><span class="o">?</span><span class="w"> </span><span class="n">_serveurImpose</span>
+<a id="__codelineno-6-31" name="__codelineno-6-31"></a><span class="w">      </span><span class="o">:</span><span class="w"> </span><span class="n">kIsWeb</span>
+<a id="__codelineno-6-32" name="__codelineno-6-32"></a><span class="w">      </span><span class="o">?</span><span class="w"> </span><span class="s1">''</span><span class="w"> </span><span class="c1">// même origine : adresses relatives</span>
+<a id="__codelineno-6-33" name="__codelineno-6-33"></a><span class="w">      </span><span class="o">:</span><span class="w"> </span><span class="n">defaultTargetPlatform</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">TargetPlatform</span><span class="p">.</span><span class="n">android</span>
+<a id="__codelineno-6-34" name="__codelineno-6-34"></a><span class="w">      </span><span class="o">?</span><span class="w"> </span><span class="s1">'http://10.0.2.2:8080'</span>
+<a id="__codelineno-6-35" name="__codelineno-6-35"></a><span class="w">      </span><span class="o">:</span><span class="w"> </span><span class="s1">'http://localhost:8080'</span><span class="p">;</span>
 <a id="__codelineno-6-36" name="__codelineno-6-36"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>L&#x27;adresse du serveur, selon la plate-forme (cf. exemple 22) :</p>
@@ -3348,40 +3348,40 @@
 <span class="normal"><a href="#__codelineno-14-31">31</a></span>
 <span class="normal"><a href="#__codelineno-14-32">32</a></span>
 <span class="normal"><a href="#__codelineno-14-33">33</a></span>
-<span class="normal"><a href="#__codelineno-14-34">34</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>{
-<a id="__codelineno-14-2" name="__codelineno-14-2"></a>  "APP": {
-<a id="__codelineno-14-3" name="__codelineno-14-3"></a>    "TITLE": "RdvMedecins",
-<a id="__codelineno-14-4" name="__codelineno-14-4"></a>    "LOGOUT": "Se déconnecter",
-<a id="__codelineno-14-5" name="__codelineno-14-5"></a>    "MENU_AGENDA": "Agenda",
-<a id="__codelineno-14-6" name="__codelineno-14-6"></a>    "MENU_DOCTORS": "Médecins",
-<a id="__codelineno-14-7" name="__codelineno-14-7"></a>    "MENU_PATIENTS": "Clients",
-<a id="__codelineno-14-8" name="__codelineno-14-8"></a>    "MENU_MY_SPACE": "Mon espace",
-<a id="__codelineno-14-9" name="__codelineno-14-9"></a>    "LOADING": "Chargement...",
-<a id="__codelineno-14-10" name="__codelineno-14-10"></a>    "LANGUAGE": "Langue",
-<a id="__codelineno-14-11" name="__codelineno-14-11"></a>    "MENU_ACCOUNT": "Mon compte",
-<a id="__codelineno-14-12" name="__codelineno-14-12"></a>    "CONNECTED_AS": "Connecté : {{nom}}",
-<a id="__codelineno-14-13" name="__codelineno-14-13"></a>    "RETRY": "Réessayer"
-<a id="__codelineno-14-14" name="__codelineno-14-14"></a>  },
-<a id="__codelineno-14-15" name="__codelineno-14-15"></a>  "LOGIN": {
-<a id="__codelineno-14-16" name="__codelineno-14-16"></a>    "TITLE": "Connexion",
-<a id="__codelineno-14-17" name="__codelineno-14-17"></a>    "LOGIN_LABEL": "Login",
-<a id="__codelineno-14-18" name="__codelineno-14-18"></a>    "PASSWORD_LABEL": "Mot de passe",
-<a id="__codelineno-14-19" name="__codelineno-14-19"></a>    "SUBMIT": "Se connecter",
-<a id="__codelineno-14-20" name="__codelineno-14-20"></a>    "ERROR": "Login ou mot de passe incorrect.",
-<a id="__codelineno-14-21" name="__codelineno-14-21"></a>    "DEMO_ACCOUNTS": "Comptes de démonstration (mot de passe = login) :",
-<a id="__codelineno-14-22" name="__codelineno-14-22"></a>    "DEMO_ADMIN": "rôle ADMIN : rendez-vous + gestion des médecins et des clients",
-<a id="__codelineno-14-23" name="__codelineno-14-23"></a>    "DEMO_DOCTOR": "rôle DOCTOR : prise et annulation de rendez-vous",
-<a id="__codelineno-14-24" name="__codelineno-14-24"></a>    "DEMO_USER": "rôle USER (patients) : réservation pour eux-mêmes, gestion de leur compte",
-<a id="__codelineno-14-25" name="__codelineno-14-25"></a>    "CREATE_ACCOUNT": "Créer un compte client",
-<a id="__codelineno-14-26" name="__codelineno-14-26"></a>    "CREATE_ACCOUNT_HELP": "Pour créer un compte, recopiez d'abord les caractères de l'image."
-<a id="__codelineno-14-27" name="__codelineno-14-27"></a>  },
-<a id="__codelineno-14-28" name="__codelineno-14-28"></a>  "DOCTOR_DAY_PICKER": {
-<a id="__codelineno-14-29" name="__codelineno-14-29"></a>    "DOCTOR_LABEL": "Médecin",
-<a id="__codelineno-14-30" name="__codelineno-14-30"></a>    "CHOOSE_DOCTOR": "-- choisir un médecin --",
-<a id="__codelineno-14-31" name="__codelineno-14-31"></a>    "DAY_LABEL": "Jour",
-<a id="__codelineno-14-32" name="__codelineno-14-32"></a>    "VIEW_AGENDA": "Voir l'agenda",
-<a id="__codelineno-14-33" name="__codelineno-14-33"></a>    "CHOOSE_DAY": "Choisir le jour"
-<a id="__codelineno-14-34" name="__codelineno-14-34"></a>  },
+<span class="normal"><a href="#__codelineno-14-34">34</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="p">{</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="w">  </span><span class="nt">"APP"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">    </span><span class="nt">"TITLE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RdvMedecins"</span><span class="p">,</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="w">    </span><span class="nt">"LOGOUT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Se déconnecter"</span><span class="p">,</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="w">    </span><span class="nt">"MENU_AGENDA"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Agenda"</span><span class="p">,</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="w">    </span><span class="nt">"MENU_DOCTORS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Médecins"</span><span class="p">,</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="w">    </span><span class="nt">"MENU_PATIENTS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clients"</span><span class="p">,</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="w">    </span><span class="nt">"MENU_MY_SPACE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mon espace"</span><span class="p">,</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="w">    </span><span class="nt">"LOADING"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chargement..."</span><span class="p">,</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="w">    </span><span class="nt">"LANGUAGE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Langue"</span><span class="p">,</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="w">    </span><span class="nt">"MENU_ACCOUNT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mon compte"</span><span class="p">,</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12"></a><span class="w">    </span><span class="nt">"CONNECTED_AS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Connecté : {{nom}}"</span><span class="p">,</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13"></a><span class="w">    </span><span class="nt">"RETRY"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Réessayer"</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-14-15" name="__codelineno-14-15"></a><span class="w">  </span><span class="nt">"LOGIN"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-14-16" name="__codelineno-14-16"></a><span class="w">    </span><span class="nt">"TITLE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Connexion"</span><span class="p">,</span>
+<a id="__codelineno-14-17" name="__codelineno-14-17"></a><span class="w">    </span><span class="nt">"LOGIN_LABEL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Login"</span><span class="p">,</span>
+<a id="__codelineno-14-18" name="__codelineno-14-18"></a><span class="w">    </span><span class="nt">"PASSWORD_LABEL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mot de passe"</span><span class="p">,</span>
+<a id="__codelineno-14-19" name="__codelineno-14-19"></a><span class="w">    </span><span class="nt">"SUBMIT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Se connecter"</span><span class="p">,</span>
+<a id="__codelineno-14-20" name="__codelineno-14-20"></a><span class="w">    </span><span class="nt">"ERROR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Login ou mot de passe incorrect."</span><span class="p">,</span>
+<a id="__codelineno-14-21" name="__codelineno-14-21"></a><span class="w">    </span><span class="nt">"DEMO_ACCOUNTS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Comptes de démonstration (mot de passe = login) :"</span><span class="p">,</span>
+<a id="__codelineno-14-22" name="__codelineno-14-22"></a><span class="w">    </span><span class="nt">"DEMO_ADMIN"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rôle ADMIN : rendez-vous + gestion des médecins et des clients"</span><span class="p">,</span>
+<a id="__codelineno-14-23" name="__codelineno-14-23"></a><span class="w">    </span><span class="nt">"DEMO_DOCTOR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rôle DOCTOR : prise et annulation de rendez-vous"</span><span class="p">,</span>
+<a id="__codelineno-14-24" name="__codelineno-14-24"></a><span class="w">    </span><span class="nt">"DEMO_USER"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rôle USER (patients) : réservation pour eux-mêmes, gestion de leur compte"</span><span class="p">,</span>
+<a id="__codelineno-14-25" name="__codelineno-14-25"></a><span class="w">    </span><span class="nt">"CREATE_ACCOUNT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Créer un compte client"</span><span class="p">,</span>
+<a id="__codelineno-14-26" name="__codelineno-14-26"></a><span class="w">    </span><span class="nt">"CREATE_ACCOUNT_HELP"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pour créer un compte, recopiez d'abord les caractères de l'image."</span>
+<a id="__codelineno-14-27" name="__codelineno-14-27"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-14-28" name="__codelineno-14-28"></a><span class="w">  </span><span class="nt">"DOCTOR_DAY_PICKER"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-14-29" name="__codelineno-14-29"></a><span class="w">    </span><span class="nt">"DOCTOR_LABEL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Médecin"</span><span class="p">,</span>
+<a id="__codelineno-14-30" name="__codelineno-14-30"></a><span class="w">    </span><span class="nt">"CHOOSE_DOCTOR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-- choisir un médecin --"</span><span class="p">,</span>
+<a id="__codelineno-14-31" name="__codelineno-14-31"></a><span class="w">    </span><span class="nt">"DAY_LABEL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jour"</span><span class="p">,</span>
+<a id="__codelineno-14-32" name="__codelineno-14-32"></a><span class="w">    </span><span class="nt">"VIEW_AGENDA"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Voir l'agenda"</span><span class="p">,</span>
+<a id="__codelineno-14-33" name="__codelineno-14-33"></a><span class="w">    </span><span class="nt">"CHOOSE_DAY"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Choisir le jour"</span>
+<a id="__codelineno-14-34" name="__codelineno-14-34"></a><span class="w">  </span><span class="p">},</span>
 </code></pre></div></td></tr></table></div>
 <p>Un fichier par langue, les mêmes clés dans chacun ; un groupe de clés par écran ; les clés <strong><em>[ERRORS.*]</em></strong> sont celles que renvoie le serveur.</p>
 <h2 id="119-letat-partage">11.9. <span style="color: #2e74b5">L&#x27;état partagé</span></h2>
@@ -3858,32 +3858,32 @@
 <a id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="c1">// du client (cf. exemple 09).</span>
 <a id="__codelineno-18-7" name="__codelineno-18-7"></a><span class="c1">// =========================================================================</span>
 <a id="__codelineno-18-8" name="__codelineno-18-8"></a>
-<a id="__codelineno-18-9" name="__codelineno-18-9"></a><span class="kn">import</span><span class="w"> </span><span class="err">'</span><span class="nn">package</span><span class="p">:</span><span class="n">intl</span><span class="o">/</span><span class="n">intl</span><span class="p">.</span><span class="na">dart</span><span class="err">'</span><span class="p">;</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9"></a><span class="k">import</span><span class="w"> </span><span class="s1">'package:intl/intl.dart'</span><span class="p">;</span>
 <a id="__codelineno-18-10" name="__codelineno-18-10"></a>
-<a id="__codelineno-18-11" name="__codelineno-18-11"></a><span class="kn">import</span><span class="w"> </span><span class="err">'</span><span class="nn">api</span><span class="o">/</span><span class="n">types</span><span class="p">.</span><span class="na">dart</span><span class="err">'</span><span class="p">;</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11"></a><span class="k">import</span><span class="w"> </span><span class="s1">'api/types.dart'</span><span class="p">;</span>
 <a id="__codelineno-18-12" name="__codelineno-18-12"></a>
-<a id="__codelineno-18-13" name="__codelineno-18-13"></a><span class="n">String</span><span class="w"> </span><span class="nf">_deux</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">.</span><span class="na">toString</span><span class="p">().</span><span class="na">padLeft</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="sc">'0'</span><span class="p">);</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13"></a><span class="kt">String</span><span class="w"> </span><span class="n">_deux</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">.</span><span class="n">toString</span><span class="p">().</span><span class="n">padLeft</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="s1">'0'</span><span class="p">);</span>
 <a id="__codelineno-18-14" name="__codelineno-18-14"></a>
 <a id="__codelineno-18-15" name="__codelineno-18-15"></a><span class="c1">// "8:05" plutôt que "8:5"</span>
-<a id="__codelineno-18-16" name="__codelineno-18-16"></a><span class="n">String</span><span class="w"> </span><span class="nf">heure</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="err">'</span><span class="n">$h</span><span class="p">:</span><span class="n">$</span><span class="p">{</span><span class="n">_deux</span><span class="p">(</span><span class="n">m</span><span class="p">)}</span><span class="err">'</span><span class="p">;</span>
+<a id="__codelineno-18-16" name="__codelineno-18-16"></a><span class="kt">String</span><span class="w"> </span><span class="n">heure</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">'</span><span class="si">$</span><span class="n">h</span><span class="s1">:</span><span class="si">${</span><span class="n">_deux</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="si">}</span><span class="s1">'</span><span class="p">;</span>
 <a id="__codelineno-18-17" name="__codelineno-18-17"></a>
 <a id="__codelineno-18-18" name="__codelineno-18-18"></a><span class="c1">// "8:00 - 8:20"</span>
-<a id="__codelineno-18-19" name="__codelineno-18-19"></a><span class="n">String</span><span class="w"> </span><span class="nf">horaire</span><span class="p">(</span><span class="n">Creneau</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="err">'</span><span class="n">$</span><span class="p">{</span><span class="n">heure</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="na">hdebut</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="na">mdebut</span><span class="p">)}</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">$</span><span class="p">{</span><span class="n">heure</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="na">hfin</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="na">mfin</span><span class="p">)}</span><span class="err">'</span><span class="p">;</span>
+<a id="__codelineno-18-19" name="__codelineno-18-19"></a><span class="kt">String</span><span class="w"> </span><span class="n">horaire</span><span class="p">(</span><span class="n">Creneau</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">'</span><span class="si">${</span><span class="n">heure</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">hdebut</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">mdebut</span><span class="p">)</span><span class="si">}</span><span class="s1"> - </span><span class="si">${</span><span class="n">heure</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">hfin</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">mfin</span><span class="p">)</span><span class="si">}</span><span class="s1">'</span><span class="p">;</span>
 <a id="__codelineno-18-20" name="__codelineno-18-20"></a>
 <a id="__codelineno-18-21" name="__codelineno-18-21"></a><span class="c1">// une date -&gt; "yyyy-MM-dd" (le format de l'API)</span>
-<a id="__codelineno-18-22" name="__codelineno-18-22"></a><span class="n">String</span><span class="w"> </span><span class="nf">versJour</span><span class="p">(</span><span class="n">DateTime</span><span class="w"> </span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="err">'</span><span class="n">$</span><span class="p">{</span><span class="n">d</span><span class="p">.</span><span class="na">year</span><span class="p">}</span><span class="o">-</span><span class="n">$</span><span class="p">{</span><span class="n">_deux</span><span class="p">(</span><span class="n">d</span><span class="p">.</span><span class="na">month</span><span class="p">)}</span><span class="o">-</span><span class="n">$</span><span class="p">{</span><span class="n">_deux</span><span class="p">(</span><span class="n">d</span><span class="p">.</span><span class="na">day</span><span class="p">)}</span><span class="err">'</span><span class="p">;</span>
+<a id="__codelineno-18-22" name="__codelineno-18-22"></a><span class="kt">String</span><span class="w"> </span><span class="n">versJour</span><span class="p">(</span><span class="n">DateTime</span><span class="w"> </span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">'</span><span class="si">${</span><span class="n">d</span><span class="p">.</span><span class="n">year</span><span class="si">}</span><span class="s1">-</span><span class="si">${</span><span class="n">_deux</span><span class="p">(</span><span class="n">d</span><span class="p">.</span><span class="n">month</span><span class="p">)</span><span class="si">}</span><span class="s1">-</span><span class="si">${</span><span class="n">_deux</span><span class="p">(</span><span class="n">d</span><span class="p">.</span><span class="n">day</span><span class="p">)</span><span class="si">}</span><span class="s1">'</span><span class="p">;</span>
 <a id="__codelineno-18-23" name="__codelineno-18-23"></a>
-<a id="__codelineno-18-24" name="__codelineno-18-24"></a><span class="n">String</span><span class="w"> </span><span class="nf">aujourdhui</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">versJour</span><span class="p">(</span><span class="n">DateTime</span><span class="p">.</span><span class="na">now</span><span class="p">());</span>
+<a id="__codelineno-18-24" name="__codelineno-18-24"></a><span class="kt">String</span><span class="w"> </span><span class="n">aujourdhui</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">versJour</span><span class="p">(</span><span class="n">DateTime</span><span class="p">.</span><span class="n">now</span><span class="p">());</span>
 <a id="__codelineno-18-25" name="__codelineno-18-25"></a>
 <a id="__codelineno-18-26" name="__codelineno-18-26"></a><span class="c1">// vrai si jour est une date qui existe, au format yyyy-MM-dd</span>
-<a id="__codelineno-18-27" name="__codelineno-18-27"></a><span class="n">bool</span><span class="w"> </span><span class="nf">estUneDateValide</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">jour</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-18-28" name="__codelineno-18-28"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">RegExp</span><span class="p">(</span><span class="n">r</span><span class="err">'</span><span class="o">^</span><span class="err">\</span><span class="n">d</span><span class="p">{</span><span class="mi">4</span><span class="p">}</span><span class="o">-</span><span class="err">\</span><span class="n">d</span><span class="p">{</span><span class="mi">2</span><span class="p">}</span><span class="o">-</span><span class="err">\</span><span class="n">d</span><span class="p">{</span><span class="mi">2</span><span class="p">}</span><span class="n">$</span><span class="err">'</span><span class="p">).</span><span class="na">hasMatch</span><span class="p">(</span><span class="n">jour</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
-<a id="__codelineno-18-29" name="__codelineno-18-29"></a><span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="na">tryParse</span><span class="p">(</span><span class="n">jour</span><span class="p">);</span>
+<a id="__codelineno-18-27" name="__codelineno-18-27"></a><span class="kt">bool</span><span class="w"> </span><span class="n">estUneDateValide</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">jour</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-28" name="__codelineno-18-28"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">RegExp</span><span class="p">(</span><span class="s1">r'^\d{4}-\d{2}-\d{2}$'</span><span class="p">).</span><span class="n">hasMatch</span><span class="p">(</span><span class="n">jour</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<a id="__codelineno-18-29" name="__codelineno-18-29"></a><span class="w">  </span><span class="kd">final</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">tryParse</span><span class="p">(</span><span class="n">jour</span><span class="p">);</span>
 <a id="__codelineno-18-30" name="__codelineno-18-30"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">versJour</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">jour</span><span class="p">;</span><span class="w"> </span><span class="c1">// 2026-02-30 -&gt; 2026-03-02 : refusé</span>
 <a id="__codelineno-18-31" name="__codelineno-18-31"></a><span class="p">}</span>
 <a id="__codelineno-18-32" name="__codelineno-18-32"></a>
 <a id="__codelineno-18-33" name="__codelineno-18-33"></a><span class="c1">// "lundi 5 octobre 2026" / "Monday, October 5, 2026"</span>
-<a id="__codelineno-18-34" name="__codelineno-18-34"></a><span class="n">String</span><span class="w"> </span><span class="nf">jourLong</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">jour</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">langue</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">DateFormat</span><span class="p">.</span><span class="na">yMMMMEEEEd</span><span class="p">(</span><span class="n">langue</span><span class="p">).</span><span class="na">format</span><span class="p">(</span><span class="n">DateTime</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span><span class="n">jour</span><span class="p">));</span>
+<a id="__codelineno-18-34" name="__codelineno-18-34"></a><span class="kt">String</span><span class="w"> </span><span class="n">jourLong</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">jour</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">langue</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">DateFormat</span><span class="p">.</span><span class="n">yMMMMEEEEd</span><span class="p">(</span><span class="n">langue</span><span class="p">).</span><span class="n">format</span><span class="p">(</span><span class="n">DateTime</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="n">jour</span><span class="p">));</span>
 </code></pre></div></td></tr></table></div>
 <p>La mise en forme des données brutes du serveur (cf. exemple 09) :</p>
 <ul>
@@ -6977,57 +6977,57 @@
 <span class="normal"><a href="#__codelineno-30-48">48</a></span>
 <span class="normal"><a href="#__codelineno-30-49">49</a></span>
 <span class="normal"><a href="#__codelineno-30-50">50</a></span>
-<span class="normal"><a href="#__codelineno-30-51">51</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="o">//</span> <span class="o">=========================================================================</span>
-<a id="__codelineno-30-2" name="__codelineno-30-2"></a><span class="o">//</span> <span class="n">lib</span><span class="o">/</span><span class="n">pages</span><span class="o">/</span><span class="n">personnes_config</span><span class="o">.</span><span class="n">dart</span> <span class="o">-</span> <span class="n">médecins</span> <span class="n">ou</span> <span class="n">clients</span> <span class="err">?</span>
-<a id="__codelineno-30-3" name="__codelineno-30-3"></a><span class="o">//</span> <span class="o">-------------------------------------------------------------------------</span>
-<a id="__codelineno-30-4" name="__codelineno-30-4"></a><span class="o">//</span> <span class="n">Les</span> <span class="n">écrans</span> <span class="n">de</span> <span class="n">gestion</span> <span class="n">des</span> <span class="n">médecins</span> <span class="n">et</span> <span class="n">des</span> <span class="n">clients</span> <span class="n">sont</span> <span class="n">IDENTIQUES</span> <span class="p">:</span> <span class="n">même</span>
-<a id="__codelineno-30-5" name="__codelineno-30-5"></a><span class="o">//</span> <span class="n">liste</span><span class="p">,</span> <span class="n">même</span> <span class="n">formulaire</span><span class="o">.</span> <span class="n">On</span> <span class="n">les</span> <span class="n">écrit</span> <span class="n">UNE</span> <span class="n">fois</span> <span class="p">(</span><span class="n">personnes</span><span class="o">.</span><span class="n">dart</span><span class="p">,</span>
-<a id="__codelineno-30-6" name="__codelineno-30-6"></a><span class="o">//</span> <span class="n">personne_formulaire</span><span class="o">.</span><span class="n">dart</span><span class="p">)</span> <span class="p">;</span> <span class="n">seules</span> <span class="n">changent</span> <span class="n">l</span><span class="s1">'adresse de l'</span><span class="n">API</span> <span class="n">et</span> <span class="n">les</span>
-<a id="__codelineno-30-7" name="__codelineno-30-7"></a><span class="o">//</span> <span class="n">clés</span> <span class="n">des</span> <span class="n">libellés</span><span class="p">,</span> <span class="n">décrites</span> <span class="n">ici</span><span class="o">.</span> <span class="n">Le</span> <span class="n">routeur</span> <span class="n">passe</span> <span class="n">le</span> <span class="nb">type</span> <span class="n">à</span> <span class="n">chaque</span> <span class="n">écran</span><span class="o">.</span>
-<a id="__codelineno-30-8" name="__codelineno-30-8"></a><span class="o">//</span> <span class="o">=========================================================================</span>
+<span class="normal"><a href="#__codelineno-30-51">51</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="c1">// =========================================================================</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2"></a><span class="c1">// lib/pages/personnes_config.dart - médecins ou clients ?</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3"></a><span class="c1">// -------------------------------------------------------------------------</span>
+<a id="__codelineno-30-4" name="__codelineno-30-4"></a><span class="c1">// Les écrans de gestion des médecins et des clients sont IDENTIQUES : même</span>
+<a id="__codelineno-30-5" name="__codelineno-30-5"></a><span class="c1">// liste, même formulaire. On les écrit UNE fois (personnes.dart,</span>
+<a id="__codelineno-30-6" name="__codelineno-30-6"></a><span class="c1">// personne_formulaire.dart) ; seules changent l'adresse de l'API et les</span>
+<a id="__codelineno-30-7" name="__codelineno-30-7"></a><span class="c1">// clés des libellés, décrites ici. Le routeur passe le type à chaque écran.</span>
+<a id="__codelineno-30-8" name="__codelineno-30-8"></a><span class="c1">// =========================================================================</span>
 <a id="__codelineno-30-9" name="__codelineno-30-9"></a>
-<a id="__codelineno-30-10" name="__codelineno-30-10"></a><span class="kn">import</span><span class="w"> </span><span class="s1">'../api/rdvmedecins_api.dart'</span><span class="p">;</span>
-<a id="__codelineno-30-11" name="__codelineno-30-11"></a><span class="kn">import</span><span class="w"> </span><span class="s1">'../api/types.dart'</span><span class="p">;</span>
+<a id="__codelineno-30-10" name="__codelineno-30-10"></a><span class="k">import</span><span class="w"> </span><span class="s1">'../api/rdvmedecins_api.dart'</span><span class="p">;</span>
+<a id="__codelineno-30-11" name="__codelineno-30-11"></a><span class="k">import</span><span class="w"> </span><span class="s1">'../api/types.dart'</span><span class="p">;</span>
 <a id="__codelineno-30-12" name="__codelineno-30-12"></a>
-<a id="__codelineno-30-13" name="__codelineno-30-13"></a><span class="n">typedef</span> <span class="n">ClesPersonnes</span> <span class="o">=</span> <span class="p">({</span>
-<a id="__codelineno-30-14" name="__codelineno-30-14"></a>  <span class="n">String</span> <span class="n">titre</span><span class="p">,</span> <span class="o">//</span> <span class="s2">"Médecins"</span>
-<a id="__codelineno-30-15" name="__codelineno-30-15"></a>  <span class="n">String</span> <span class="n">ajouter</span><span class="p">,</span> <span class="o">//</span> <span class="s2">"Ajouter un médecin"</span>
-<a id="__codelineno-30-16" name="__codelineno-30-16"></a>  <span class="n">String</span> <span class="n">modifier</span><span class="p">,</span> <span class="o">//</span> <span class="s2">"Modifier un médecin"</span>
-<a id="__codelineno-30-17" name="__codelineno-30-17"></a>  <span class="n">String</span> <span class="n">vide</span><span class="p">,</span> <span class="o">//</span> <span class="s2">"Aucun médecin."</span>
-<a id="__codelineno-30-18" name="__codelineno-30-18"></a>  <span class="n">String</span> <span class="n">confirmerSuppression</span><span class="p">,</span>
-<a id="__codelineno-30-19" name="__codelineno-30-19"></a>  <span class="n">String</span> <span class="n">ajoute</span><span class="p">,</span> <span class="o">//</span> <span class="s2">"Le médecin {{nom}} a été ajouté (login : {{login}})."</span>
-<a id="__codelineno-30-20" name="__codelineno-30-20"></a>  <span class="n">String</span> <span class="n">modifie</span><span class="p">,</span>
-<a id="__codelineno-30-21" name="__codelineno-30-21"></a>  <span class="n">String</span> <span class="n">supprime</span><span class="p">,</span>
-<a id="__codelineno-30-22" name="__codelineno-30-22"></a>  <span class="n">String</span> <span class="n">introuvable</span><span class="p">,</span> <span class="o">//</span> <span class="n">la</span> <span class="n">fiche</span> <span class="n">a</span> <span class="n">été</span> <span class="n">supprimée</span> <span class="n">entre</span><span class="o">-</span><span class="n">temps</span>
+<a id="__codelineno-30-13" name="__codelineno-30-13"></a><span class="kd">typedef</span><span class="w"> </span><span class="n">ClesPersonnes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span>
+<a id="__codelineno-30-14" name="__codelineno-30-14"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="c1">// "Médecins"</span>
+<a id="__codelineno-30-15" name="__codelineno-30-15"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">ajouter</span><span class="p">,</span><span class="w"> </span><span class="c1">// "Ajouter un médecin"</span>
+<a id="__codelineno-30-16" name="__codelineno-30-16"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">modifier</span><span class="p">,</span><span class="w"> </span><span class="c1">// "Modifier un médecin"</span>
+<a id="__codelineno-30-17" name="__codelineno-30-17"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">vide</span><span class="p">,</span><span class="w"> </span><span class="c1">// "Aucun médecin."</span>
+<a id="__codelineno-30-18" name="__codelineno-30-18"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">confirmerSuppression</span><span class="p">,</span>
+<a id="__codelineno-30-19" name="__codelineno-30-19"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">ajoute</span><span class="p">,</span><span class="w"> </span><span class="c1">// "Le médecin {{nom}} a été ajouté (login : {{login}})."</span>
+<a id="__codelineno-30-20" name="__codelineno-30-20"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">modifie</span><span class="p">,</span>
+<a id="__codelineno-30-21" name="__codelineno-30-21"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">supprime</span><span class="p">,</span>
+<a id="__codelineno-30-22" name="__codelineno-30-22"></a><span class="w">  </span><span class="kt">String</span><span class="w"> </span><span class="n">introuvable</span><span class="p">,</span><span class="w"> </span><span class="c1">// la fiche a été supprimée entre-temps</span>
 <a id="__codelineno-30-23" name="__codelineno-30-23"></a><span class="p">});</span>
 <a id="__codelineno-30-24" name="__codelineno-30-24"></a>
-<a id="__codelineno-30-25" name="__codelineno-30-25"></a><span class="n">ClesPersonnes</span> <span class="n">cles</span><span class="p">(</span><span class="n">TypePersonnes</span> <span class="nb">type</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">switch</span> <span class="p">(</span><span class="nb">type</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-30-26" name="__codelineno-30-26"></a>  <span class="n">TypePersonnes</span><span class="o">.</span><span class="n">medecins</span> <span class="o">=&gt;</span> <span class="p">(</span>
-<a id="__codelineno-30-27" name="__codelineno-30-27"></a>    <span class="n">titre</span><span class="p">:</span> <span class="s1">'MEDECINS.TITLE'</span><span class="p">,</span>
-<a id="__codelineno-30-28" name="__codelineno-30-28"></a>    <span class="n">ajouter</span><span class="p">:</span> <span class="s1">'MEDECINS.ADD'</span><span class="p">,</span>
-<a id="__codelineno-30-29" name="__codelineno-30-29"></a>    <span class="n">modifier</span><span class="p">:</span> <span class="s1">'MEDECINS.EDIT'</span><span class="p">,</span>
-<a id="__codelineno-30-30" name="__codelineno-30-30"></a>    <span class="n">vide</span><span class="p">:</span> <span class="s1">'MEDECINS.EMPTY'</span><span class="p">,</span>
-<a id="__codelineno-30-31" name="__codelineno-30-31"></a>    <span class="n">confirmerSuppression</span><span class="p">:</span> <span class="s1">'MEDECINS.DELETE_CONFIRM'</span><span class="p">,</span>
-<a id="__codelineno-30-32" name="__codelineno-30-32"></a>    <span class="n">ajoute</span><span class="p">:</span> <span class="s1">'MEDECINS.ADDED'</span><span class="p">,</span>
-<a id="__codelineno-30-33" name="__codelineno-30-33"></a>    <span class="n">modifie</span><span class="p">:</span> <span class="s1">'MEDECINS.UPDATED'</span><span class="p">,</span>
-<a id="__codelineno-30-34" name="__codelineno-30-34"></a>    <span class="n">supprime</span><span class="p">:</span> <span class="s1">'MEDECINS.DELETED'</span><span class="p">,</span>
-<a id="__codelineno-30-35" name="__codelineno-30-35"></a>    <span class="n">introuvable</span><span class="p">:</span> <span class="s1">'ERRORS.DOCTOR_NOT_FOUND'</span><span class="p">,</span>
-<a id="__codelineno-30-36" name="__codelineno-30-36"></a>  <span class="p">),</span>
-<a id="__codelineno-30-37" name="__codelineno-30-37"></a>  <span class="n">TypePersonnes</span><span class="o">.</span><span class="n">clients</span> <span class="o">=&gt;</span> <span class="p">(</span>
-<a id="__codelineno-30-38" name="__codelineno-30-38"></a>    <span class="n">titre</span><span class="p">:</span> <span class="s1">'CLIENTS.TITLE'</span><span class="p">,</span>
-<a id="__codelineno-30-39" name="__codelineno-30-39"></a>    <span class="n">ajouter</span><span class="p">:</span> <span class="s1">'CLIENTS.ADD'</span><span class="p">,</span>
-<a id="__codelineno-30-40" name="__codelineno-30-40"></a>    <span class="n">modifier</span><span class="p">:</span> <span class="s1">'CLIENTS.EDIT'</span><span class="p">,</span>
-<a id="__codelineno-30-41" name="__codelineno-30-41"></a>    <span class="n">vide</span><span class="p">:</span> <span class="s1">'CLIENTS.EMPTY'</span><span class="p">,</span>
-<a id="__codelineno-30-42" name="__codelineno-30-42"></a>    <span class="n">confirmerSuppression</span><span class="p">:</span> <span class="s1">'CLIENTS.DELETE_CONFIRM'</span><span class="p">,</span>
-<a id="__codelineno-30-43" name="__codelineno-30-43"></a>    <span class="n">ajoute</span><span class="p">:</span> <span class="s1">'CLIENTS.ADDED'</span><span class="p">,</span>
-<a id="__codelineno-30-44" name="__codelineno-30-44"></a>    <span class="n">modifie</span><span class="p">:</span> <span class="s1">'CLIENTS.UPDATED'</span><span class="p">,</span>
-<a id="__codelineno-30-45" name="__codelineno-30-45"></a>    <span class="n">supprime</span><span class="p">:</span> <span class="s1">'CLIENTS.DELETED'</span><span class="p">,</span>
-<a id="__codelineno-30-46" name="__codelineno-30-46"></a>    <span class="n">introuvable</span><span class="p">:</span> <span class="s1">'ERRORS.PATIENT_NOT_FOUND'</span><span class="p">,</span>
-<a id="__codelineno-30-47" name="__codelineno-30-47"></a>  <span class="p">),</span>
+<a id="__codelineno-30-25" name="__codelineno-30-25"></a><span class="n">ClesPersonnes</span><span class="w"> </span><span class="n">cles</span><span class="p">(</span><span class="n">TypePersonnes</span><span class="w"> </span><span class="n">type</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-30-26" name="__codelineno-30-26"></a><span class="w">  </span><span class="n">TypePersonnes</span><span class="p">.</span><span class="n">medecins</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-30-27" name="__codelineno-30-27"></a><span class="w">    </span><span class="nl">titre:</span><span class="w"> </span><span class="s1">'MEDECINS.TITLE'</span><span class="p">,</span>
+<a id="__codelineno-30-28" name="__codelineno-30-28"></a><span class="w">    </span><span class="nl">ajouter:</span><span class="w"> </span><span class="s1">'MEDECINS.ADD'</span><span class="p">,</span>
+<a id="__codelineno-30-29" name="__codelineno-30-29"></a><span class="w">    </span><span class="nl">modifier:</span><span class="w"> </span><span class="s1">'MEDECINS.EDIT'</span><span class="p">,</span>
+<a id="__codelineno-30-30" name="__codelineno-30-30"></a><span class="w">    </span><span class="nl">vide:</span><span class="w"> </span><span class="s1">'MEDECINS.EMPTY'</span><span class="p">,</span>
+<a id="__codelineno-30-31" name="__codelineno-30-31"></a><span class="w">    </span><span class="nl">confirmerSuppression:</span><span class="w"> </span><span class="s1">'MEDECINS.DELETE_CONFIRM'</span><span class="p">,</span>
+<a id="__codelineno-30-32" name="__codelineno-30-32"></a><span class="w">    </span><span class="nl">ajoute:</span><span class="w"> </span><span class="s1">'MEDECINS.ADDED'</span><span class="p">,</span>
+<a id="__codelineno-30-33" name="__codelineno-30-33"></a><span class="w">    </span><span class="nl">modifie:</span><span class="w"> </span><span class="s1">'MEDECINS.UPDATED'</span><span class="p">,</span>
+<a id="__codelineno-30-34" name="__codelineno-30-34"></a><span class="w">    </span><span class="nl">supprime:</span><span class="w"> </span><span class="s1">'MEDECINS.DELETED'</span><span class="p">,</span>
+<a id="__codelineno-30-35" name="__codelineno-30-35"></a><span class="w">    </span><span class="nl">introuvable:</span><span class="w"> </span><span class="s1">'ERRORS.DOCTOR_NOT_FOUND'</span><span class="p">,</span>
+<a id="__codelineno-30-36" name="__codelineno-30-36"></a><span class="w">  </span><span class="p">),</span>
+<a id="__codelineno-30-37" name="__codelineno-30-37"></a><span class="w">  </span><span class="n">TypePersonnes</span><span class="p">.</span><span class="n">clients</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-30-38" name="__codelineno-30-38"></a><span class="w">    </span><span class="nl">titre:</span><span class="w"> </span><span class="s1">'CLIENTS.TITLE'</span><span class="p">,</span>
+<a id="__codelineno-30-39" name="__codelineno-30-39"></a><span class="w">    </span><span class="nl">ajouter:</span><span class="w"> </span><span class="s1">'CLIENTS.ADD'</span><span class="p">,</span>
+<a id="__codelineno-30-40" name="__codelineno-30-40"></a><span class="w">    </span><span class="nl">modifier:</span><span class="w"> </span><span class="s1">'CLIENTS.EDIT'</span><span class="p">,</span>
+<a id="__codelineno-30-41" name="__codelineno-30-41"></a><span class="w">    </span><span class="nl">vide:</span><span class="w"> </span><span class="s1">'CLIENTS.EMPTY'</span><span class="p">,</span>
+<a id="__codelineno-30-42" name="__codelineno-30-42"></a><span class="w">    </span><span class="nl">confirmerSuppression:</span><span class="w"> </span><span class="s1">'CLIENTS.DELETE_CONFIRM'</span><span class="p">,</span>
+<a id="__codelineno-30-43" name="__codelineno-30-43"></a><span class="w">    </span><span class="nl">ajoute:</span><span class="w"> </span><span class="s1">'CLIENTS.ADDED'</span><span class="p">,</span>
+<a id="__codelineno-30-44" name="__codelineno-30-44"></a><span class="w">    </span><span class="nl">modifie:</span><span class="w"> </span><span class="s1">'CLIENTS.UPDATED'</span><span class="p">,</span>
+<a id="__codelineno-30-45" name="__codelineno-30-45"></a><span class="w">    </span><span class="nl">supprime:</span><span class="w"> </span><span class="s1">'CLIENTS.DELETED'</span><span class="p">,</span>
+<a id="__codelineno-30-46" name="__codelineno-30-46"></a><span class="w">    </span><span class="nl">introuvable:</span><span class="w"> </span><span class="s1">'ERRORS.PATIENT_NOT_FOUND'</span><span class="p">,</span>
+<a id="__codelineno-30-47" name="__codelineno-30-47"></a><span class="w">  </span><span class="p">),</span>
 <a id="__codelineno-30-48" name="__codelineno-30-48"></a><span class="p">};</span>
 <a id="__codelineno-30-49" name="__codelineno-30-49"></a>
-<a id="__codelineno-30-50" name="__codelineno-30-50"></a><span class="o">//</span> <span class="p">{{</span><span class="n">nom</span><span class="p">}}</span> <span class="n">et</span> <span class="p">{{</span><span class="n">login</span><span class="p">}}</span> <span class="n">des</span> <span class="n">messages</span> <span class="s2">"ajouté / modifié / supprimé"</span>
-<a id="__codelineno-30-51" name="__codelineno-30-51"></a><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">parametres</span><span class="p">(</span><span class="n">Personne</span> <span class="n">p</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="s1">'nom'</span><span class="p">:</span> <span class="s1">'$</span><span class="si">{p.prenom}</span><span class="s1"> $</span><span class="si">{p.nom}</span><span class="s1">'</span><span class="p">,</span> <span class="s1">'login'</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">login</span> <span class="err">??</span> <span class="s1">''</span><span class="p">};</span>
+<a id="__codelineno-30-50" name="__codelineno-30-50"></a><span class="c1">// {{nom}} et {{login}} des messages "ajouté / modifié / supprimé"</span>
+<a id="__codelineno-30-51" name="__codelineno-30-51"></a><span class="n">Map</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parametres</span><span class="p">(</span><span class="n">Personne</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="s1">'nom'</span><span class="o">:</span><span class="w"> </span><span class="s1">'</span><span class="si">${</span><span class="n">p</span><span class="p">.</span><span class="n">prenom</span><span class="si">}</span><span class="s1"> </span><span class="si">${</span><span class="n">p</span><span class="p">.</span><span class="n">nom</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span><span class="w"> </span><span class="s1">'login'</span><span class="o">:</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">login</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="s1">''</span><span class="p">};</span>
 </code></pre></div></td></tr></table></div>
 <p>Les écrans des médecins et des clients sont identiques ; seules changent les clés des libellés, décrites ici.</p>
 <ul>

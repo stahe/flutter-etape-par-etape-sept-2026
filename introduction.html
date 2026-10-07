@@ -863,23 +863,23 @@
 <span class="normal"><a href="#__codelineno-1-14">14</a></span>
 <span class="normal"><a href="#__codelineno-1-15">15</a></span>
 <span class="normal"><a href="#__codelineno-1-16">16</a></span>
-<span class="normal"><a href="#__codelineno-1-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">exemples_flutter</span><span class="o">/</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="err">├── android/                    le projet Android (généré par Flutter)</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="err">├── web/                        le projet web (généré par Flutter)</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="err">├── windows/                    le projet Windows (généré par Flutter)</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="err">├── assets/                     les fichiers livrés avec l'application (images, dictionnaires)</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="err">├── lib/</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="err">│   ├── main.dart               le point d'entrée par défaut (il lance l'exemple 01)</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="err">│   ├── ex01_premiere_application/</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="err">│   │   └── main.dart           le point d'entrée de l'exemple 01</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="err">│   ├── ex02_etat/</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="err">│   ├── ...</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="err">│   ├── ex25_erreurs_serveur/</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="err">│   └── commun/                 du code partagé par les exemples 22 à 25</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="err">├── test/                       les tests (et la fabrication des copies d'écran)</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="err">├── analysis_options.yaml       les règles de l'analyseur de code</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="err">├── pubspec.yaml                la description du projet et de ses paquets</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="err">└── web_dev_config.yaml         le serveur de développement web (exemples 22 à 25)</span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>exemples_flutter/
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>├── android/                    le projet Android (généré par Flutter)
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>├── web/                        le projet web (généré par Flutter)
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>├── windows/                    le projet Windows (généré par Flutter)
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>├── assets/                     les fichiers livrés avec l'application (images, dictionnaires)
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>├── lib/
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>│   ├── main.dart               le point d'entrée par défaut (il lance l'exemple 01)
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>│   ├── ex01_premiere_application/
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>│   │   └── main.dart           le point d'entrée de l'exemple 01
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a>│   ├── ex02_etat/
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a>│   ├── ...
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a>│   ├── ex25_erreurs_serveur/
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a>│   └── commun/                 du code partagé par les exemples 22 à 25
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a>├── test/                       les tests (et la fabrication des copies d'écran)
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a>├── analysis_options.yaml       les règles de l'analyseur de code
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a>├── pubspec.yaml                la description du projet et de ses paquets
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a>└── web_dev_config.yaml         le serveur de développement web (exemples 22 à 25)
 </code></pre></div></td></tr></table></div>
 <p>Les dossiers propres à chaque plate-forme (<em>[android/]</em>, <em>[web/]</em>, <em>[windows/]</em>) ne sont pas fournis en entier : ce sont de petits projets <em>[Android]</em>, web et <em>[Windows]</em>, que <em>[Flutter]</em> sait fabriquer, et qui dépendent de la version de <em>[Flutter]</em> installée. On les fabrique une seule fois, puis on télécharge les paquets, dans une console ouverte sur le dossier <em>[exemples_flutter]</em> (dans <em>[VS Code]</em> : menu Terminal / Nouveau terminal) :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
